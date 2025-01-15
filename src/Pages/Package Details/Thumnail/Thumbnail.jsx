@@ -39,7 +39,7 @@ export const Thumbnail = () => {
         console.log('lightGallery has been initialized');
     };
   return (
-    <div className='container bg-yellow-200 mx-auto'>
+    <div className='container bg-gray-200 mx-auto'>
         <LightGallery
          onInit={onInit}
          speed={500}
@@ -51,7 +51,7 @@ export const Thumbnail = () => {
         <img
           src={image.src}
           alt={image.alt}
-          className="h-48 w-full object-cover"
+          className="h-48 md:h-80 w-full object-cover"
         />
       </a>
     ))}

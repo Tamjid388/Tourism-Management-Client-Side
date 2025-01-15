@@ -31,7 +31,7 @@ export const Overview = () => {
         allowFullScreen
       ></iframe> */}
       {/* <ReactPlayer
-      url={'https://www.youtube.com/watch?v=Zcx247sfxPM'}
+      url={'https://youtu.be/5s8fs_j2xlY?si=IkCsRw8bO9bhitg8'}
       ></ReactPlayer> */}
      </div>
     </div>
