@@ -10,7 +10,7 @@ export const Navbar = () => {
     </>
   return (
     <div className="">
-        <div className="navbar fixed z-10  bg-base-100 ">
+        <div className="navbar fixed z-10  bg-white/50">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -44,7 +44,7 @@ export const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn">Button</a>
+    <Link to={'login'} className="btn">Login</Link>
   </div>
 </div>
     </div>

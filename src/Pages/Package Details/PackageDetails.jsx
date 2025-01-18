@@ -2,6 +2,8 @@ import img1 from "../../assets/Banner/banner2.jpg"
 import { Title } from "../../Component/SectionTitle/Title"
 import { AboutTour } from "./AboutTour/AboutTour"
 import { Thumbnail } from "./Thumnail/Thumbnail"
+import { Guides } from "./TourGuide/Guides"
+
 
 export const PackageDetails = () => {
   return (
@@ -12,6 +14,7 @@ export const PackageDetails = () => {
       ></Title>
         <Thumbnail></Thumbnail>
         <AboutTour></AboutTour>
+        <Guides></Guides>
         
     </div>
   )
