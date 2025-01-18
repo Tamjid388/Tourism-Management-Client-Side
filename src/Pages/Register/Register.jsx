@@ -1,18 +1,31 @@
-import React from 'react'
+import { useForm } from "react-hook-form"
 import { Link } from 'react-router-dom'
 
 export const Register = () => {
+    const {
+        register,
+        handleSubmit,
+        watch,
+        formState: { errors },
+      } = useForm()
+
+      const onSubmit = (data) => {
+        console.log(data)
+    }
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
     <div className="w-full max-w-md bg-white rounded-lg shadow-md p-6">
       <h2 className="text-2xl font-bold text-center mb-4">Register</h2>
-      <form className="space-y-4">
+      <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
         {/* Name Input */}
         <div>
-          <label className="block text-sm font-medium mb-1">Name</label>
+          <label className="block text-sm font-medium mb-1"
+         >Name</label>
           <input
             type="text"
             placeholder="Your Name"
+            name="name"
+            {...register("name")}
             className="input input-bordered w-full"
             required
           />
@@ -23,7 +36,9 @@ export const Register = () => {
           <label className="block text-sm font-medium mb-1">Email</label>
           <input
             type="email"
+            name="email"
             placeholder="Your Email"
+            {...register("email")}
             className="input input-bordered w-full"
             required
           />
@@ -34,7 +49,9 @@ export const Register = () => {
           <label className="block text-sm font-medium mb-1">Image URL</label>
           <input
             type="url"
+            name="url"
             placeholder="Your Image URL"
+            {...register("url")}
             className="input input-bordered w-full"
             required
           />
@@ -46,6 +63,8 @@ export const Register = () => {
           <input
             type="password"
             placeholder="Your Password"
+            name="password"
+            {...register("password")}
             className="input input-bordered w-full"
             required
           />
@@ -53,7 +72,7 @@ export const Register = () => {
 
         {/* Submit Button */}
         <button
-          type="button"
+          type="submit"
           className="btn btn-primary w-full mt-4"
         >
           Register
