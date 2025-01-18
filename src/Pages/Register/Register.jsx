@@ -2,15 +2,17 @@ import { useContext } from "react"
 import { useForm } from "react-hook-form"
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { Authcontext } from "../../Provider/Authprovider"
+import Swal from "sweetalert2"
 
 
 export const Register = () => {
-    const {createUser,loginWithGoogle}=useContext(Authcontext)
+    const {createUser,loginWithGoogle,updateUserProfile}=useContext(Authcontext)
     const navigate=useNavigate()
     const {
         register,
         handleSubmit,
         watch,
+        reset,
         formState: { errors },
       } = useForm()
 
@@ -18,8 +20,26 @@ export const Register = () => {
         console.log(data)
         createUser(data.email,data.password)
         .then((userCredential) => {
-            // Signed up 
+           
             const user = userCredential.user;
+            updateUserProfile(data.name,data.url)
+            .then(()=>{
+        console.log("User profile Updated");
+        reset()
+        Swal.fire({
+            title: "Signup SuccessFull",
+            icon: "success",
+            draggable: true
+          });
+          navigate("/")
+
+        
+            })
+            .catch((error) => {
+                // An error occurred
+                // ...
+                console.log(error);
+              });
             
           })
           .catch((error) => {

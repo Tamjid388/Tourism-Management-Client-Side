@@ -3,9 +3,25 @@ import { Link, NavLink } from "react-router-dom"
 import logo from "../../assets/Link.png"
 import { useContext } from "react"
 import { Authcontext } from "../../Provider/Authprovider"
+import Swal from "sweetalert2"
 
 export const Navbar = () => {
-  const {user}=useContext(Authcontext)
+  const {user,signOutUser}=useContext(Authcontext)
+  const handleSignout=()=>{
+    signOutUser()
+    .then(()=>{
+      console.log("Signout Successfull");
+      Swal.fire({
+        title: "Signout Successfull!",
+        icon: "success",
+        draggable: true
+      });
+      
+    })
+    .catch((error)=>{
+      console.log("Signout Failed",error);
+    })
+  }
  
     const menu=<>
     <li><NavLink to={"/"}>Home</NavLink></li>
@@ -51,7 +67,7 @@ export const Navbar = () => {
   <div className="navbar-end">
     {
       user?
-      <Link className="btn">Logout</Link>
+      <Link onClick={handleSignout} className="btn">Logout</Link>
     :
     <Link to={'login'} className="btn">Login</Link>
     }
