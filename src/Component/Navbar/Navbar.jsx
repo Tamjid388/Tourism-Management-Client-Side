@@ -1,8 +1,12 @@
 // import logo from "../../assets/Tripwbg.png"
 import { Link, NavLink } from "react-router-dom"
 import logo from "../../assets/Link.png"
+import { useContext } from "react"
+import { Authcontext } from "../../Provider/Authprovider"
 
 export const Navbar = () => {
+  const {user}=useContext(Authcontext)
+ 
     const menu=<>
     <li><NavLink to={"/"}>Home</NavLink></li>
     <li><NavLink to={"/packagedetails"}>Package Details</NavLink></li>
@@ -45,7 +49,12 @@ export const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
+    {
+      user?
+      <Link className="btn">Logout</Link>
+    :
     <Link to={'login'} className="btn">Login</Link>
+    }
   </div>
 </div>
     </div>

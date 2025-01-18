@@ -1,7 +1,12 @@
+import { useContext } from "react"
 import { useForm } from "react-hook-form"
-import { Link } from 'react-router-dom'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
+import { Authcontext } from "../../Provider/Authprovider"
+
 
 export const Register = () => {
+    const {createUser,loginWithGoogle}=useContext(Authcontext)
+    const navigate=useNavigate()
     const {
         register,
         handleSubmit,
@@ -11,6 +16,30 @@ export const Register = () => {
 
       const onSubmit = (data) => {
         console.log(data)
+        createUser(data.email,data.password)
+        .then((userCredential) => {
+            // Signed up 
+            const user = userCredential.user;
+            
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorMessage);
+            // ..
+          });
+    }
+
+    const handleGoogleSignIne=()=>{
+        loginWithGoogle()
+        .then(result=>{
+            console.log(result.user);
+            console.log(result.user);
+            navigate("/")
+
+        }
+    )
+
     }
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
@@ -81,6 +110,7 @@ export const Register = () => {
       
           {/*  SignUp With Google Button */}
           <button
+          onClick={handleGoogleSignIne}
           type="button"
           className="btn btn-outline w-full mt-4"
         >
