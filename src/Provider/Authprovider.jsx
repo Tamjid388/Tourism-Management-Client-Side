@@ -1,6 +1,6 @@
 import {
     createUserWithEmailAndPassword,
-    getAuth, onAuthStateChanged, signInWithPopup, signOut,
+    getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut,
     updateProfile
 } from 'firebase/auth';
 import React, {
@@ -31,6 +31,13 @@ export const Authprovider = ({ children }) => {
         setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
+    // Sign In
+    const signIn=(email,password)=>{
+        setLoading(true)
+        return signInWithEmailAndPassword(auth,email,password)
+    }
+
+
     const signOutUser = () => {
         setLoading(true)
         return signOut(auth)
@@ -59,7 +66,7 @@ export const Authprovider = ({ children }) => {
     }, [])
 
     const info = {
-        user, loginWithGoogle, signOutUser, createUser,updateUserProfile
+        user,signIn, loginWithGoogle, signOutUser, createUser,updateUserProfile
     }
 
     return (
