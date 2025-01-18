@@ -6,6 +6,7 @@ export const Navbar = () => {
     const menu=<>
     <li><NavLink to={"/"}>Home</NavLink></li>
     <li><NavLink to={"/packagedetails"}>Package Details</NavLink></li>
+    <li><NavLink to={"/register"}>Register</NavLink></li>
    
     </>
   return (

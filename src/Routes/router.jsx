@@ -8,6 +8,7 @@ import { Home } from "../Pages/Home/Home";
 import { PackageDetails } from "../Pages/Package Details/PackageDetails";
 import { GuidePage } from "../Pages/Package Details/TourGuide/GuidePage";
 import { Login } from "../Pages/Login/Login";
+import { Register } from "../Pages/Register/Register";
 
 
 
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
     {
       path:"login",
       element:<Login></Login>
+    },
+    {
+      path:"register",
+      element:<Register></Register>
     }
   ]);
 
