@@ -3,9 +3,11 @@ import { useForm } from "react-hook-form"
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { Authcontext } from "../../Provider/Authprovider"
 import Swal from "sweetalert2"
+import { useAxiosPublic } from "../../Hooks/useAxiosPublic"
 
 
 export const Register = () => {
+  const axiosPublic=useAxiosPublic()
     const {createUser,loginWithGoogle,updateUserProfile}=useContext(Authcontext)
     const navigate=useNavigate()
     const {
@@ -31,7 +33,22 @@ export const Register = () => {
             icon: "success",
             draggable: true
           });
-          navigate("/")
+        
+       
+          const userInfo={
+            name:data.name,
+            email:data.email
+
+          }
+          axiosPublic.post("/allusers",userInfo)
+          .then(res=>{
+            if(res.data.insertedId){
+              console.log('user added to the database')
+                
+                navigate("/"); 
+            }
+          })
+          
 
         
             })
@@ -54,8 +71,19 @@ export const Register = () => {
         loginWithGoogle()
         .then(result=>{
             console.log(result.user);
-            console.log(result.user);
-            navigate("/")
+            const userInfo={
+              name:result.user?.displayName,
+              email:result.user?.email
+      
+            
+            }
+            axiosPublic.post("/allusers",userInfo)
+            .then(res=>{
+              console.log(res.data);
+              console.log("signinWith google successfull");
+              navigate("/")
+            })
+          
 
         }
     )

@@ -11,6 +11,11 @@ import { Login } from "../Pages/Login/Login";
 import { Register } from "../Pages/Register/Register";
 import { Demo } from "../Pages/demo";
 import { Privateroute } from "./Privateroute";
+import { Dashboard } from "../Layout/DashboardLayout/Dashboard";
+import { ManageProfile } from "../Pages/DashBoard/Admin/ManageProfile";
+import { AddPackage } from "../Pages/DashBoard/Admin/AddPackage";
+import { ManageUser } from "../Pages/DashBoard/Admin/ManageUser";
+import { ManageCandidates } from "../Pages/DashBoard/Admin/ManageCandidates";
 
 
 
@@ -48,6 +53,34 @@ const router = createBrowserRouter([
     {
       path:"demo",
       element:<Demo></Demo>
+    },
+    {
+      path:"dashboard",
+      element:<Dashboard></Dashboard>,
+     children:[
+      // Admin Routes
+      {
+        path:"manageprofile",
+        
+        element:<ManageProfile></ManageProfile>
+      }
+      ,
+      {
+        path:"addpackage",
+        
+        element:<AddPackage></AddPackage>
+      },
+      {
+        path:"manageUser",
+        
+        element:<ManageUser></ManageUser>
+      },
+      {
+        path:"manageCandidates",
+        
+        element:<ManageCandidates></ManageCandidates>
+      }
+     ]
     }
   ]);
 
