@@ -9,6 +9,8 @@ import { PackageDetails } from "../Pages/Package Details/PackageDetails";
 import { GuidePage } from "../Pages/Package Details/TourGuide/GuidePage";
 import { Login } from "../Pages/Login/Login";
 import { Register } from "../Pages/Register/Register";
+import { Demo } from "../Pages/demo";
+import { Privateroute } from "./Privateroute";
 
 
 
@@ -22,7 +24,9 @@ const router = createBrowserRouter([
             element:<Home></Home>
         },
         {    path: "/packagedetails",
-            element:<PackageDetails></PackageDetails>
+            element:<Privateroute>
+              <PackageDetails></PackageDetails>
+            </Privateroute>
         }
         ,
         {    path: "/guides/:id",
@@ -40,6 +44,10 @@ const router = createBrowserRouter([
     {
       path:"register",
       element:<Register></Register>
+    },
+    {
+      path:"demo",
+      element:<Demo></Demo>
     }
   ]);
 

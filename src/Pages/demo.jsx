@@ -1,7 +1,10 @@
 import React from 'react'
+import { Loading } from '../Component/LoadingSpinner/Loading'
 
 export const Demo = () => {
   return (
-    <div className='text-5xl'>demo</div>
+    <div className=''>
+      <Loading></Loading>
+    </div>
   )
 }

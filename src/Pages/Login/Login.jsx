@@ -1,11 +1,14 @@
 import React, { useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Authcontext } from '../../Provider/Authprovider';
 import { useForm } from 'react-hook-form';
+import Swal from 'sweetalert2';
 
 export const Login = () => {
   const {user,signIn}=useContext(Authcontext)
   const navigate=useNavigate()
+  const location=useLocation()
+  const from=location.state?.from?.pathname || "/"
   // razin@gmail.com pass1234
    const {
           register,
@@ -22,7 +25,8 @@ export const Login = () => {
            // Signed in 
            const user = userCredential.user;
            console.log(user);
-           navigate("/")
+           Swal.fire("Login Successfull!");
+           navigate(from,{replace:true})
            // ...
          })
          .catch((error) => {
