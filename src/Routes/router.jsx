@@ -16,6 +16,7 @@ import { ManageProfile } from "../Pages/DashBoard/Admin/ManageProfile";
 import { AddPackage } from "../Pages/DashBoard/Admin/AddPackage";
 import { ManageUser } from "../Pages/DashBoard/Admin/ManageUser";
 import { ManageCandidates } from "../Pages/DashBoard/Admin/ManageCandidates";
+import { TouristProfile } from "../Pages/DashBoard/Toursist/TouristProfile";
 
 
 
@@ -79,6 +80,12 @@ const router = createBrowserRouter([
         path:"manageCandidates",
         
         element:<ManageCandidates></ManageCandidates>
+      }
+      // Tourist
+      ,{
+        path:'manageTouristProfile',
+        element:<TouristProfile></TouristProfile>
+
       }
      ]
     }

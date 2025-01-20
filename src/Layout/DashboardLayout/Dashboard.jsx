@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { AiFillCarryOut } from "react-icons/ai";
 import { FaHome } from "react-icons/fa";
 import { IoMenu } from "react-icons/io5";
 import { MdAddChart, MdManageAccounts, MdOutlineManageHistory } from "react-icons/md";
 import { Link, Outlet } from "react-router-dom";
+import { Authcontext } from "../../Provider/Authprovider";
 
 export const Dashboard = () => {
-  let user = "admin";
+    // const {user}=useContext(Authcontext)
+    // console.log(user);
+    let user='admin'
+ 
   return (
     <div className="flex ">
       <div className="drawer lg:drawer-open">
@@ -24,7 +28,7 @@ export const Dashboard = () => {
               </h1>
             </label>
           </div>
-          <div className="bg-red-400 mx-2">
+          <div className=" container mx-auto">
             <Outlet></Outlet>
           </div>
         </div>
@@ -48,10 +52,10 @@ export const Dashboard = () => {
 
 
             {/* Sidebar content here */}
-            {user ===" " && (
+            {user ==="tourist" && (
              <div className="space-y-3">
               <li className="shadow-md rounded-md">
-                <Link>
+                <Link to='manageTouristProfile'>
                   <MdManageAccounts className="text-xl"></MdManageAccounts>
                   Manage Profile
                 </Link>
