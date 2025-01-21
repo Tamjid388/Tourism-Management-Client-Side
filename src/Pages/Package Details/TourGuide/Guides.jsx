@@ -3,6 +3,8 @@ import { Title } from '../../../Component/SectionTitle/Title'
 import { Link, useParams } from 'react-router-dom'
 import { useAxiosSecure } from '../../../Hooks/useAxiosSecure'
 import { useQuery } from '@tanstack/react-query'
+import { Loading } from '../../../Component/LoadingSpinner/Loading'
+
 
 export const Guides = () => {
     const [guides,setGuides]=useState([])
@@ -15,20 +17,27 @@ export const Guides = () => {
         const res = await axiosSecure.get(`/guides`); 
         return res.data;
       },
+      enabled:!! localStorage.getItem('access-token')
       
     })
+
+
+
     useEffect(() => {
       if (guideData) {
         setGuides(guideData); 
       }
     }, [guideData]); 
+    if(isPending){
+      return <Loading></Loading>
+    }
   return (
     <div className='container mx-auto'>
         <Title subheading={"Tour Guide"} 
         heading={'Our Travel Guide'}></Title>
         <section className='py-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-20'>
          {
-            guides.map((guide,idx)=><div className="card card-compact bg-base-100  shadow-xl">
+            guides.map((guide,idx)=><div key={idx} className="card card-compact bg-base-100  shadow-xl">
             <figure>
               <img className='h-48 w-48 object-cover rounded-[100px]'
                 src={guide.profileImage}

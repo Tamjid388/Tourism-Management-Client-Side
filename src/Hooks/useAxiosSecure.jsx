@@ -20,7 +20,7 @@ export const axiossecure=axios.create({
 })
 export const useAxiosSecure = () => {
     const navigate =useNavigate()
-    const {logout}=useContext(Authcontext)
+    const {signOutUser}=useContext(Authcontext)
     // Request interceptor to add authorization header for every secure call for api
  axiossecure.interceptors.request.use(function(config){
     const token=localStorage.getItem("access-token")
@@ -45,7 +45,7 @@ export const useAxiosSecure = () => {
     const status=error.response.status;
     console.log("Status Error in Interceptor",status);
     if(status===401 || status===403){
-        await logout()
+        await signOutUser()
         navigate('/login')
     }
     return Promise.reject(error);

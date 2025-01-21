@@ -10,12 +10,8 @@ export const ManageUser = () => {
     const {data:users=[],refetch}=useQuery({
         queryKey:["allusers"],
         queryFn:async()=>{
-            const res=await axiosSecure.get("/allusers",
-              {
-              headers:{
-                authorization:`Bearer ${localStorage.getItem('access-token')}`
-              }
-            })
+            const res=await axiosSecure.get("/allusers"
+          )
             return res.data
         }
     })

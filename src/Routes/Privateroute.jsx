@@ -7,6 +7,7 @@ import { Loading } from "../Component/LoadingSpinner/Loading"
 export const Privateroute = ({children}) => {
     const location=useLocation()
     const {user,loading}=useContext(Authcontext)
+    console.log(user,loading);
     if(loading){
         return <Loading></Loading>
     }

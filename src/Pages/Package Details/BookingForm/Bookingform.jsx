@@ -1,25 +1,80 @@
-import React, { useState } from 'react'
-import { useForm } from 'react-hook-form'
+import React, { useContext, useState } from 'react'
+import { useForm,Controller} from 'react-hook-form'
 import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
+import { Authcontext } from '../../../Provider/Authprovider';
+import { useAxiosSecure } from '../../../Hooks/useAxiosSecure';
+import Swal from 'sweetalert2';
+import axios from 'axios';
+
 
 export const Bookingform = () => {
-    
+   const axiosSecure=useAxiosSecure()
+    const {user}=useContext(Authcontext)
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    // console.log(user);
     const [startDate, setStartDate] = useState(new Date());
         const {
             register,
             handleSubmit,
-            watch,
+            watch,control,
             formState: { errors },
           } = useForm()
+
+
+
+          if (!user) {
+            return <div>Loading...</div>;
+          }
           
     const onSubmit = (data) => {
-        console.log(data)
+        
+        const bookingData={
+         data,
+          status:'Pending'
+        }
+        console.log(bookingData)
+        axios.post('http://localhost:5000/bookings',bookingData)
+        .then(res=>{
+          if (res.data.insertedId){
+            console.log("worked");
+            setIsModalOpen(true)
+          }
+          else{
+            console.log("Failed");
+          }
+        })
     }
-    
+  
   return (
     <div className='container mx-auto'>
+        {/* Modal Component */}
+        {isModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="modal modal-open">
+            <div className="modal-box">
+              <h2 className="text-2xl font-bold mb-4">Confirm your Booking</h2>
+              <p>Your booking has been successfully placed!</p>
+              <div className="modal-action">
+                <a
+                  href="/my-bookings"
+                  className="btn bg-[#63AB45] text-white"
+                  onClick={() => setIsModalOpen(false)} // Close modal after redirection
+                >
+                  Go to My Bookings
+                </a>
+              </div>
+              <div className="modal-action">
+      <form method="dialog">
+        {/* if there is a button in form, it will close the modal */}
+        <button onClick={() => setIsModalOpen(false)} className="btn">Close</button>
+      </form>
+    </div>
+            </div>
+          </div>
+        </div>
+      )}
         <h1 className='text-4xl font-bold text-center my-12'>Booking Form</h1>
         <div className='max-w-lg mx-auto border p-8 bg-base-200 rounded-lg'>
             <form action="" className='space-y-4'
@@ -32,6 +87,8 @@ export const Bookingform = () => {
           <input
             type="text"
             placeholder="Your Name"
+            defaultValue={user?.displayName}
+            readOnly
             name="name"
             {...register("name")}
             className="input input-bordered w-full"
@@ -45,6 +102,8 @@ export const Bookingform = () => {
           <input
             type="email"
             name="email"
+            defaultValue={user?.email}
+            readOnly
             placeholder="Your Email"
             {...register("email")}
             className="input input-bordered w-full"
@@ -58,6 +117,8 @@ export const Bookingform = () => {
           <input
             type="url"
             name="url"
+            defaultValue={user?.photoURL}
+            readOnly
             placeholder="Your Image URL"
             {...register("url")}
             className="input input-bordered w-full"
@@ -69,11 +130,25 @@ export const Bookingform = () => {
           <label className="block text-sm font-medium mb-1">Date</label>
         
           <div >
-          <DatePicker
-             className="input input-bordered w-full"
-            selected={startDate} onChange={(date) => setStartDate(date)} />
+          <Controller
+            name="date" 
+            control={control} 
+            render={({ field }) => (
+              <DatePicker
+                className="input input-bordered w-full"
+                selected={field.value}
+                onChange={(date) => {
+                
+                  field.onChange(date); // Pass the new date to react-hook-form
+                }}
+              />
+            )}
+          />
           </div>
         </div>
+
+
+
         <button type='submit' className="btn w-full bg-[#63AB45] text-white">
 Book Now
         </button>

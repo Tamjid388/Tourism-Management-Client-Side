@@ -5,11 +5,14 @@ import { IoMenu } from "react-icons/io5";
 import { MdAddChart, MdManageAccounts, MdOutlineManageHistory } from "react-icons/md";
 import { Link, Outlet } from "react-router-dom";
 import { Authcontext } from "../../Provider/Authprovider";
+import { useAdmin } from "../../Hooks/useAdmin";
 
 export const Dashboard = () => {
     // const {user}=useContext(Authcontext)
     // console.log(user);
-    let user='admin'
+    let user='tourist' 
+    const [isAdmin]=useAdmin()
+    console.log(isAdmin);
  
   return (
     <div className="flex ">
@@ -54,6 +57,9 @@ export const Dashboard = () => {
             {/* Sidebar content here */}
             {user ==="tourist" && (
              <div className="space-y-3">
+              <li>
+                <h1 className="text-xl text-green-600 font-bold">Tourist Dashboard</h1>
+              </li>
               <li className="shadow-md rounded-md">
                 <Link to='manageTouristProfile'>
                   <MdManageAccounts className="text-xl"></MdManageAccounts>
@@ -91,8 +97,12 @@ export const Dashboard = () => {
 
 
             {/* User Admin */}
-            {user == "admin" && (
+            {isAdmin && (
              <div className="space-y-3">
+              <li>
+                <h1 className="text-xl text-green-600 font-bold">Admin Dashboard</h1>
+              </li>
+
               <li className="shadow-md rounded-md">
                 <Link to={"manageProfile"}>
                   <MdManageAccounts className="text-xl"></MdManageAccounts>

@@ -8,7 +8,8 @@ import { useAxiosPublic } from "../../Hooks/useAxiosPublic"
 
 export const Register = () => {
   const axiosPublic=useAxiosPublic()
-    const {createUser,loginWithGoogle,updateUserProfile}=useContext(Authcontext)
+    const {createUser,loginWithGoogle,updateUserProfile,user}=useContext(Authcontext)
+    // console.log(user);
     const navigate=useNavigate()
     const {
         register,
@@ -37,7 +38,8 @@ export const Register = () => {
        
           const userInfo={
             name:data.name,
-            email:data.email
+            email:data.email,
+            photo:data.url
 
           }
           axiosPublic.post("/allusers",userInfo)
@@ -72,7 +74,7 @@ export const Register = () => {
         .then(result=>{
             console.log(result.user);
             const userInfo={
-              name:result.user?.displayName,
+              name:result.user?.displayname,
               email:result.user?.email
       
             

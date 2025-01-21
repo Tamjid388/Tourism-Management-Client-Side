@@ -79,7 +79,7 @@ export const Authprovider = ({ children }) => {
     }, [])
 
     const info = {
-        user,signIn, loginWithGoogle, signOutUser, createUser,updateUserProfile
+        user,signIn, loginWithGoogle, signOutUser, createUser,updateUserProfile,loading
     }
 
     return (
