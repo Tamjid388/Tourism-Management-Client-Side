@@ -6,6 +6,7 @@ import { MdAddChart, MdManageAccounts, MdOutlineManageHistory } from "react-icon
 import { Link, Outlet } from "react-router-dom";
 import { Authcontext } from "../../Provider/Authprovider";
 import { useAdmin } from "../../Hooks/useAdmin";
+import { FaPeopleRoof } from "react-icons/fa6";
 
 export const Dashboard = () => {
     // const {user}=useContext(Authcontext)
@@ -69,22 +70,22 @@ export const Dashboard = () => {
               </li>
              
               <li className="shadow-md rounded-md">
-                <Link>
+                <Link to={'addStory'}>
                   <MdAddChart className="text-xl"></MdAddChart>
-                  Add Package
+                  Add Stories
                 </Link>
               
               </li>
               <li className="shadow-md rounded-md">
-                <Link>
-                  <AiFillCarryOut className="text-xl"></AiFillCarryOut>
-                  Manage Users
+                <Link to={'manageStory'}>
+                <MdOutlineManageHistory className="text-xl"></MdOutlineManageHistory>
+                  Manage Stories
                 </Link>
               
               </li>
               <li className="shadow-md rounded-md">
-                <Link>
-                  <MdOutlineManageHistory className="text-xl"></MdOutlineManageHistory>
+                <Link to={'manageCandidates'}>
+                  <FaPeopleRoof className="text-xl"></FaPeopleRoof>
                   Manage Candidates 
                 </Link>
               

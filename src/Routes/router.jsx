@@ -17,6 +17,8 @@ import { AddPackage } from "../Pages/DashBoard/Admin/AddPackage";
 import { ManageUser } from "../Pages/DashBoard/Admin/ManageUser";
 import { ManageCandidates } from "../Pages/DashBoard/Admin/ManageCandidates";
 import { TouristProfile } from "../Pages/DashBoard/Toursist/TouristProfile";
+import { AddStory } from "../Pages/DashBoard/Toursist/AddStory/AddStory";
+import { ManageStory } from "../Pages/DashBoard/Toursist/ManageStory/ManageStory";
 
 
 
@@ -86,7 +88,19 @@ const router = createBrowserRouter([
         path:'manageTouristProfile',
         element:<TouristProfile></TouristProfile>
 
-      }
+      },
+      {
+        path:'addStory',
+        element:<AddStory></AddStory>
+      },
+      {
+        path:'manageStory',
+        element:<ManageStory></ManageStory>
+      },
+      {
+        path:'manageCandidates',
+        element:<ManageCandidates></ManageCandidates>
+      },
      ]
     }
   ]);
