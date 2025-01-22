@@ -13,7 +13,7 @@ export const Dashboard = () => {
     // console.log(user);
     let user='tourist' 
     const [isAdmin]=useAdmin()
-    console.log(isAdmin);
+    // console.log(isAdmin);
  
   return (
     <div className="flex ">
