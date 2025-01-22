@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { AiFillCarryOut } from "react-icons/ai";
-import { FaHome } from "react-icons/fa";
+import { FaHome, FaWpforms } from "react-icons/fa";
 import { IoMenu } from "react-icons/io5";
 import { MdAddChart, MdManageAccounts, MdOutlineManageHistory } from "react-icons/md";
 import { Link, Outlet } from "react-router-dom";
@@ -69,8 +69,8 @@ export const Dashboard = () => {
               
               </li>
               <li className="shadow-md rounded-md">
-                <Link to='manageTouristProfile'>
-                  <MdManageAccounts className="text-xl"></MdManageAccounts>
+                <Link to='mybookings'>
+                  <FaWpforms className="text-xl"></FaWpforms>
                   My Bookings
                 </Link>
               

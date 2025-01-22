@@ -21,6 +21,8 @@ import { AddStory } from "../Pages/DashBoard/Toursist/AddStory/AddStory";
 import { ManageStory } from "../Pages/DashBoard/Toursist/ManageStory/ManageStory";
 import { EditStories } from "../Pages/DashBoard/Toursist/ManageStory/EditStories";
 import { Community } from "../Pages/Community/Community";
+import { MyBookings } from "../Pages/DashBoard/Toursist/MyBookings/MyBookings";
+import { Payment } from "../Pages/DashBoard/Payment/Payment";
 
 
 
@@ -72,6 +74,10 @@ const router = createBrowserRouter([
      children:[
       // Admin Routes
       {
+        path:'dashboardWelcome',
+        element:<h1 className="text-4xl mt-8 font-bold">Welcome To The Dashboard</h1>
+      },
+      {
         path:"manageprofile",
         
         element:<ManageProfile></ManageProfile>
@@ -99,6 +105,10 @@ const router = createBrowserRouter([
 
       },
       {
+        path:'mybookings',
+        element:<MyBookings></MyBookings>
+      },
+      {
         path:'addStory',
         element:<AddStory></AddStory>
       },
@@ -110,6 +120,10 @@ const router = createBrowserRouter([
         path:'editStory',
         element:<EditStories></EditStories>
       },
+      {
+        path:'paymentroute',
+        element:<Payment></Payment>
+      }
       // {
       //   path:'joinAstourguide',
       //   element:<JoinAsTourGuide></JoinAsTourGuide>

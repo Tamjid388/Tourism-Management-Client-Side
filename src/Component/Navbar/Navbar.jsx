@@ -28,7 +28,7 @@ export const Navbar = () => {
     <li><NavLink to={"/packagedetails"}>Package Details</NavLink></li>
     <li><NavLink to={"/community"}>Community</NavLink></li>
     <li><NavLink to={"/register"}>Register</NavLink></li>
-    <li><NavLink to={"dashboard/manageprofile"}>Dashboard</NavLink></li>
+    <li><NavLink to={"dashboard/dashboardWelcome"}>Dashboard</NavLink></li>
    
     </>
   return (

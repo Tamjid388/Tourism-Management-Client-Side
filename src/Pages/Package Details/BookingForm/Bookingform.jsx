@@ -57,6 +57,15 @@ export const Bookingform = () => {
     
       
     })
+    const { isPending:isPackagesPending, data: packages } = useQuery({
+      queryKey:['packages'],
+      queryFn: async () => {
+        const res = await axiosSecure.get(`/packages`); 
+        return res.data;
+      },
+    
+      
+    })
     if(isPending){
       return <h1>Loading.....</h1>
     }
@@ -139,6 +148,43 @@ export const Bookingform = () => {
             required
           />
         </div>
+           {/* Package Name */}
+      <div>
+      <label className="block text-sm font-medium mb-1">Package Name</label>
+      <select
+       
+        className={`w-full px-2 py-1 border ${errors.packageName ? 'border-red-500' : 'border-gray-300'} rounded mb-4`}
+        {...register('packageName', { required: 'Please select a guide' })}
+      >
+        <option value="" className='' >Select A Package Name</option>
+        {packages?.map((pkg) => 
+      <option key={pkg._id} >
+        {pkg.packageName}
+      </option>
+    )}
+      </select>
+        {errors.packageName && <p className="text-red-500 text-sm">{errors.packageName.message}</p>}
+      </div>
+
+
+
+
+
+
+        {/* Price Input */}
+        <div>
+          <label className="block text-sm font-medium mb-1">Price</label>
+          <input
+            type="number"
+            name="price"
+            
+       
+            placeholder="Price"
+            {...register("price")}
+            className="input input-bordered w-full"
+            required
+          />
+        </div>
         {/* Tour Date Input */}
         <div>
           <label className="block text-sm font-medium mb-1">Date</label>
@@ -170,7 +216,7 @@ export const Bookingform = () => {
         className={`w-full px-2 py-1 border ${errors.guideName ? 'border-red-500' : 'border-gray-300'} rounded mb-4`}
         {...register('guideName', { required: 'Please select a guide' })}
       >
-        <option value="">Select a Guide</option>
+        <option value="" className='' >Select a Guide</option>
         {guideData?.map((guide) => (
           <option key={guide.id} value={guide.name}>
             {guide.name}
