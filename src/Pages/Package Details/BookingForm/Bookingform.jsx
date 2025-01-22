@@ -7,6 +7,7 @@ import { Authcontext } from '../../../Provider/Authprovider';
 import { useAxiosSecure } from '../../../Hooks/useAxiosSecure';
 import Swal from 'sweetalert2';
 import axios from 'axios';
+import { useQuery } from '@tanstack/react-query';
 
 
 export const Bookingform = () => {
@@ -14,6 +15,7 @@ export const Bookingform = () => {
     const {user}=useContext(Authcontext)
     const [isModalOpen, setIsModalOpen] = useState(false);
     // console.log(user);
+ 
     const [startDate, setStartDate] = useState(new Date());
         const {
             register,
@@ -46,6 +48,18 @@ export const Bookingform = () => {
           }
         })
     }
+    const { isPending, error, data: guideData } = useQuery({
+      queryKey:['guide'],
+      queryFn: async () => {
+        const res = await axiosSecure.get(`/guides`); 
+        return res.data;
+      },
+    
+      
+    })
+    if(isPending){
+      return <h1>Loading.....</h1>
+    }
   
   return (
     <div className='container mx-auto'>
@@ -58,7 +72,7 @@ export const Bookingform = () => {
               <p>Your booking has been successfully placed!</p>
               <div className="modal-action">
                 <a
-                  href="/my-bookings"
+                 
                   className="btn bg-[#63AB45] text-white"
                   onClick={() => setIsModalOpen(false)} // Close modal after redirection
                 >
@@ -146,6 +160,24 @@ export const Bookingform = () => {
           />
           </div>
         </div>
+        {/* Select Guides */}
+        <h2 className="block text-sm font-medium mb-1">Select a Tour Guide</h2>
+
+      {/* Dropdown for Guide Names */}
+     
+      <select
+        id="guideName"
+        className={`w-full px-2 py-1 border ${errors.guideName ? 'border-red-500' : 'border-gray-300'} rounded mb-4`}
+        {...register('guideName', { required: 'Please select a guide' })}
+      >
+        <option value="">Select a Guide</option>
+        {guideData?.map((guide) => (
+          <option key={guide.id} value={guide.name}>
+            {guide.name}
+          </option>
+        ))}
+      </select>
+      {errors.guideName && <p className="text-red-500 text-sm mb-2">{errors.guideName.message}</p>}
 
 
 

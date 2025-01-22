@@ -68,6 +68,13 @@ export const Dashboard = () => {
                 </Link>
               
               </li>
+              <li className="shadow-md rounded-md">
+                <Link to='manageTouristProfile'>
+                  <MdManageAccounts className="text-xl"></MdManageAccounts>
+                  My Bookings
+                </Link>
+              
+              </li>
              
               <li className="shadow-md rounded-md">
                 <Link to={'addStory'}>
@@ -84,12 +91,13 @@ export const Dashboard = () => {
               
               </li>
               <li className="shadow-md rounded-md">
-                <Link to={'manageCandidates'}>
-                  <FaPeopleRoof className="text-xl"></FaPeopleRoof>
-                  Manage Candidates 
+                <Link to={'joinAstourguide'}>
+                <FaPeopleRoof className="text-xl"></FaPeopleRoof>
+                  Join As Tour Guide
                 </Link>
               
               </li>
+            
               
               
               </div>

@@ -19,6 +19,10 @@ import { ManageCandidates } from "../Pages/DashBoard/Admin/ManageCandidates";
 import { TouristProfile } from "../Pages/DashBoard/Toursist/TouristProfile";
 import { AddStory } from "../Pages/DashBoard/Toursist/AddStory/AddStory";
 import { ManageStory } from "../Pages/DashBoard/Toursist/ManageStory/ManageStory";
+import { EditStories } from "../Pages/DashBoard/Toursist/ManageStory/EditStories";
+import { Community } from "../Pages/Community/Community";
+
+
 
 
 
@@ -35,8 +39,13 @@ const router = createBrowserRouter([
             element:<Privateroute>
               <PackageDetails></PackageDetails>
             </Privateroute>
-        }
-        ,
+        },
+        {
+          path:'/community',
+          element:<Community></Community>
+        },
+        
+        
         {    path: "/guides/:id",
             element:<GuidePage></GuidePage>,
            
@@ -98,9 +107,15 @@ const router = createBrowserRouter([
         element:<ManageStory></ManageStory>
       },
       {
-        path:'manageCandidates',
-        element:<ManageCandidates></ManageCandidates>
+        path:'editStory',
+        element:<EditStories></EditStories>
       },
+      // {
+      //   path:'joinAstourguide',
+      //   element:<JoinAsTourGuide></JoinAsTourGuide>
+      // }
+     
+     
      ]
     }
   ]);
