@@ -27,7 +27,7 @@ export const Explore = () => {
 
         <div className='container my-12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:gap-24'>
             {
-                resources.map(resouce=><div className="card bg-base-100   shadow-xl ">
+                resources.map(resouce=><div key={resouce._id} className="card bg-base-100   shadow-xl ">
                     <figure className='rounded border-2'>
                       <img className='h-[300px] w-full'
                         src={resouce.image_url}

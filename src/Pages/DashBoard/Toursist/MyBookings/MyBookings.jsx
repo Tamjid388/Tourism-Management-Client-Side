@@ -76,12 +76,12 @@ export const MyBookings = () => {
         <td>
             <h1 className="font-semibold">{booking.data.packageName}</h1>
             <h1 className="font-semibold">{formattedDate }</h1>
-            <p className="font-semibold">{booking.data.price} TK</p>
+            <p className="font-semibold">{booking.data.price} USD</p>
         </td>
         <th className="space-x-1">
         <button  className="btn text-green-500 bg-green-200 btn-ghost btn-xs">{booking.status}</button>
           <Link to={'/dashboard/paymentroute'} 
-         
+         state={{ totalPrice:booking.data.price, bookingId: booking._id}}
          >
             <button disabled={!mybookings.length}  className="btn btn-ghost btn-outline btn-xs">
             Pay
