@@ -23,6 +23,7 @@ import { EditStories } from "../Pages/DashBoard/Toursist/ManageStory/EditStories
 import { Community } from "../Pages/Community/Community";
 import { MyBookings } from "../Pages/DashBoard/Toursist/MyBookings/MyBookings";
 import { Payment } from "../Pages/DashBoard/Payment/Payment";
+import { JoinAsTourGuide } from "../Pages/DashBoard/Toursist/JoinAsGuide/JoinAsTourGuide";
 
 
 
@@ -123,11 +124,11 @@ const router = createBrowserRouter([
       {
         path:'paymentroute',
         element:<Payment></Payment>
+      },
+      {
+        path:'joinAstourguide',
+        element:<JoinAsTourGuide></JoinAsTourGuide>
       }
-      // {
-      //   path:'joinAstourguide',
-      //   element:<JoinAsTourGuide></JoinAsTourGuide>
-      // }
      
      
      ]

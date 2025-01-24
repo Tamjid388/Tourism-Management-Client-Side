@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useForm } from 'react-hook-form';
+import { Authcontext } from '../../../../Provider/Authprovider';
+import { axiosPublic, useAxiosPublic } from '../../../../Hooks/useAxiosPublic';
+import Swal from 'sweetalert2';
 
 export const JoinAsTourGuide = () => {
+  const {user}=useContext(Authcontext)
+  const axiosPublic=useAxiosPublic()
 
   const {
     register,
@@ -11,6 +16,18 @@ export const JoinAsTourGuide = () => {
 
   const onSubmit = (data) => {
     console.log("Form Data:", data);
+    axiosPublic.patch(`/application/${user?.email}`,data)
+    .then(res=>{
+      console.log(res.data);
+      
+        Swal.fire({
+          title: "✅ Application Submitted Successfully!",
+          icon: "success",
+          draggable: true
+        });
+      
+    })
+
   
   };
   return (
@@ -21,7 +38,20 @@ export const JoinAsTourGuide = () => {
         className="bg-white p-6 rounded-md shadow-md w-full max-w-lg"
       >
         <h2 className="text-2xl font-bold mb-4 text-center">Tour Guide Application</h2>
-
+           {/* Email Input */}
+           {/* <div className="mb-4">
+          <label className="block text-sm font-medium mb-1">Email</label>
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            value={user?.email}
+            readOnly
+            {...register("email")}
+            className="input input-bordered w-full"
+            required
+          />
+        </div> */}
         {/* Application Title */}
         <div className="mb-4">
           <label className="block text-gray-700 font-medium mb-2" htmlFor="applicationTitle">

@@ -7,13 +7,30 @@ import { Link, Outlet } from "react-router-dom";
 import { Authcontext } from "../../Provider/Authprovider";
 import { useAdmin } from "../../Hooks/useAdmin";
 import { FaPeopleRoof } from "react-icons/fa6";
+import { useQuery } from "@tanstack/react-query";
+import { useAxiosSecure } from "../../Hooks/useAxiosSecure";
 
 export const Dashboard = () => {
-    // const {user}=useContext(Authcontext)
-    // console.log(user);
-    let user='tourist' 
-    const [isAdmin]=useAdmin()
+    const {user}=useContext(Authcontext)
+    const axiosSecure=useAxiosSecure()
+  
+ const { isPending, error, data:userROle=[],refetch } = useQuery({
+    queryKey: ['allusers',user?.email],
+    queryFn: async () => { 
+      const response = await axiosSecure.get(`/allusers?email=${user.email}`);
+      ; 
+      return response.data;
+      
+    },
+  })
+  // console.log(userROle.role);
+  
+
+
+    // let user='tourist' 
+    // const [isAdmin]=useAdmin()
     // console.log(isAdmin);
+    // let role='admin'
  
   return (
     <div className="flex ">
@@ -56,7 +73,7 @@ export const Dashboard = () => {
 
 
             {/* Sidebar content here */}
-            {user ==="tourist" && (
+            {userROle?.role==='tourist' && (
              <div className="space-y-3">
               <li>
                 <h1 className="text-xl text-green-600 font-bold">Tourist Dashboard</h1>
@@ -106,7 +123,7 @@ export const Dashboard = () => {
 
 
             {/* User Admin */}
-            {isAdmin && (
+            {userROle?.role==='admin' && (
              <div className="space-y-3">
               <li>
                 <h1 className="text-xl text-green-600 font-bold">Admin Dashboard</h1>
@@ -147,9 +164,12 @@ export const Dashboard = () => {
              
             )}
 
-            {/* For Tour Guide */}
-            {user == "guide" && (
+            {/* For Tour Guide  tourguide*/}
+            {userROle?.role== "admin" && (
                <div className="space-y-3">
+                 <li>
+                <h1 className="text-xl text-green-600 font-bold text-nowrap">Tour Guide Dashboard</h1>
+              </li>
                <li className="shadow-md rounded-md">
                  <Link>
                    <MdManageAccounts className="text-xl"></MdManageAccounts>

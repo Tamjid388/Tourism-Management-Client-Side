@@ -62,9 +62,15 @@ const handleModal=()=>{
       </p>
       <div className='bg-gray-200 md:w-1/3 p-2'>
       <img className='h-48 rounded-md mb-4' src={userDetail?.photo} alt="" />
-        <p>Email : {userDetail?.email}</p>
-        <p>Name : {userDetail?.name}</p>
-        <p>Role :{userDetail?.role?userDetail.role:'Tourist'}</p>
+      <div className="space-y-4">
+  <p className="text-xl font-semibold text-gray-800">Email:
+     <span className="text-gray-500">{userDetail?.email}</span></p>
+  <p className="text-xl font-semibold text-gray-800">Name: 
+    <span className="text-gray-500">{userDetail?.name}</span></p>
+  <p className="text-xl font-semibold text-gray-800">Role: 
+    <span className="text-gray-500">{userDetail?.role}</span></p>
+</div>
+
         <button
         onClick={handleModal}
         className='btn btn-sm my-4 bg-green-400 text-white'>Edit</button>
