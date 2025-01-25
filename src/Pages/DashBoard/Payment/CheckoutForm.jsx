@@ -15,7 +15,7 @@ const stripe=useStripe();
 const elements=useElements()
 const axiosSecure=useAxiosSecure()
 const {totalPrice,bookingId}=location.state || {}
-// console.log(totalPrice);
+console.log(bookingId);
 // const totalPrice=1200
 
 
@@ -89,6 +89,9 @@ useEffect(()=>{
         }
         const res=await axiosSecure.post('/payments',payment)
         console.log("Payment Saved",res);
+
+    // Changing the bookig status
+        const status=await axiosSecure.put('/bookings/status',{bookingId})
 
               
         }

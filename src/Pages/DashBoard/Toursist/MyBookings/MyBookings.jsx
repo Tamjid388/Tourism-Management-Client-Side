@@ -4,23 +4,34 @@ import { useContext } from "react";
 import { Authcontext } from "../../../../Provider/Authprovider";
 import moment from "moment";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 export const MyBookings = () => {
     const axiosPublic=useAxiosPublic()
     const {user}=useContext(Authcontext)
 
-    const { isPending, error, data:mybookings=[] } = useQuery({
+    const { isPending,refetch, error, data:mybookings=[] } = useQuery({
       queryKey: ['bookings'],
       queryFn: async () => { 
         const response = await axiosPublic.get(`/bookings?email=${user.email}`);
-        console.log(response.data); 
+         
         return response.data;
         
       },
     })
     if(isPending){
       return <h1>Loading....</h1>
+    }
+    const handlecancelBooking=(id)=>{
+          
+           axiosPublic.delete(`/bookings/${id}`)
+           .then(response=>{
+            if(response.data.deletedCount > 0){
+              Swal.fire("Booking canceled successfully.")
+              refetch()
+             }
+           })
     }
  
 
@@ -83,11 +94,14 @@ export const MyBookings = () => {
           <Link to={'/dashboard/paymentroute'} 
          state={{ totalPrice:booking.data.price, bookingId: booking._id}}
          >
-            <button disabled={!mybookings.length}  className="btn btn-ghost btn-outline btn-xs">
+            <button disabled={!mybookings.length} 
+             className="btn btn-ghost btn-outline btn-xs">
             Pay
             </button>
            </Link>
-          <button className="btn btn-ghost btn-outline btn-xs">Cancel</button>
+          <button 
+          onClick={()=>handlecancelBooking(booking._id)}
+          className="btn btn-ghost btn-outline btn-xs">Cancel</button>
         </th>
       </tr>
     );

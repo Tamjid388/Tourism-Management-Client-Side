@@ -31,9 +31,12 @@ export const ManageCandidates = () => {
     axiosSecure.patch(`/applications/accept/${email}`)
     .then((res) => {
       console.log(res.data);
-      setApplications(applications.filter(app => app.email !== email)); // Remove from list
+     
       Swal.fire('Application accepted successfully!');
       refetch()
+    // after accepting as tourguide storing the guideinfo into guide collection 
+    axiosSecure.post(`/guides/${email}`)
+
     })
 
   }

@@ -18,11 +18,11 @@ export const ManageProfile = () => {
   })
 
   
-  const { isPending:adminPending, data:Admin=[],refetch } = useQuery({
+  const { isPending:adminPending, data:Admin,refetch } = useQuery({
     queryKey: ['allusers',user?.email],
     queryFn: async () => { 
       const response = await axiossecure.get(`/allusers?email=${user.email}`);
-      ; 
+       
       return response.data;
       
     },
@@ -51,6 +51,12 @@ if (adminPending) {
       Welcome to Your Profile
     </h1>
     <div>
+
+      <div className='p-4 bg-white mb-4 rounded-md shadow-lg flex flex-col justify-center items-center space-y-2'>
+        <img className='w-48 h-48 object-cover rounded-full'  src={Admin.photo} alt="" />
+        <h1 className='text-xl font-bold'>{Admin.name}</h1>
+        <button className='btn btn-outline'>Edit</button>
+      </div>
 
     </div>
   

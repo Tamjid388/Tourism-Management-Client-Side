@@ -24,6 +24,8 @@ import { Community } from "../Pages/Community/Community";
 import { MyBookings } from "../Pages/DashBoard/Toursist/MyBookings/MyBookings";
 import { Payment } from "../Pages/DashBoard/Payment/Payment";
 import { JoinAsTourGuide } from "../Pages/DashBoard/Toursist/JoinAsGuide/JoinAsTourGuide";
+import { GuideProfile } from "../Pages/DashBoard/TourGuide/ManageProfileGuide/GuideProfile";
+import { MyAssignedTours } from "../Pages/DashBoard/TourGuide/AssignedTours/MyAssignedTours";
 
 
 
@@ -128,6 +130,15 @@ const router = createBrowserRouter([
       {
         path:'joinAstourguide',
         element:<JoinAsTourGuide></JoinAsTourGuide>
+      },
+      // TourGuide
+      {
+        path:'manageguideprofile',
+       element:<GuideProfile></GuideProfile>
+      },
+      {
+        path:'myassinedtours',
+        element:<MyAssignedTours></MyAssignedTours>
       }
      
      

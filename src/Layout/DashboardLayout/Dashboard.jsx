@@ -73,6 +73,8 @@ export const Dashboard = () => {
 
 
             {/* Sidebar content here */}
+
+              {/* User tourist */}
             {userROle?.role==='tourist' && (
              <div className="space-y-3">
               <li>
@@ -165,20 +167,20 @@ export const Dashboard = () => {
             )}
 
             {/* For Tour Guide  tourguide*/}
-            {userROle?.role== "admin" && (
+            {userROle?.role== "tourguide" && (
                <div className="space-y-3">
                  <li>
                 <h1 className="text-xl text-green-600 font-bold text-nowrap">Tour Guide Dashboard</h1>
               </li>
                <li className="shadow-md rounded-md">
-                 <Link>
+                 <Link to={'manageguideprofile'}>
                    <MdManageAccounts className="text-xl"></MdManageAccounts>
                    Manage Profile
                  </Link>
                
                </li>
                <li className="shadow-md rounded-md">
-                 <Link>
+                 <Link to={'myassinedtours'}>
                    <AiFillCarryOut className="text-xl"></AiFillCarryOut>
                    My Assigned Tours
                  </Link>
