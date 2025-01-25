@@ -3,6 +3,7 @@ import { Banner } from './Banner/Banner'
 import { Overview } from './Overview/Overview'
 import { TouristStory } from './TouristStory/TouristStory'
 import { Explore } from './ExploringActivities/Explore'
+import { FAQ } from './FAQ/FAQ'
 
 export const Home = () => {
   return (
@@ -11,6 +12,7 @@ export const Home = () => {
         <Overview></Overview>
         <TouristStory></TouristStory>
         <Explore></Explore>
+        <FAQ></FAQ>
     </div>
   )
 }
