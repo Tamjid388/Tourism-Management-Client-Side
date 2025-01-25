@@ -26,9 +26,9 @@ export const Bookingform = () => {
 
 
 
-          if (!user) {
-            return <div>Loading...</div>;
-          }
+          // if (!user) {
+          //   return <div>Loading...</div>;
+          // }
           
     const onSubmit = (data) => {
         
@@ -228,7 +228,7 @@ export const Bookingform = () => {
 
 
         <button type='submit' className="btn w-full bg-[#63AB45] text-white">
-Book Now
+         Book Now
         </button>
 
             </form>
