@@ -91,7 +91,7 @@ export const JoinAsTourGuide = () => {
 
         {/* CV Link */}
         <div className="mb-4">
-          <label className="block text-gray-700 font-medium mb-2" htmlFor="cvLink">
+          <label className="block text-gray-700 font-medium mb-2" >
             CV Link
           </label>
           <input

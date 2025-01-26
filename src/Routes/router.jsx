@@ -26,6 +26,8 @@ import { Payment } from "../Pages/DashBoard/Payment/Payment";
 import { JoinAsTourGuide } from "../Pages/DashBoard/Toursist/JoinAsGuide/JoinAsTourGuide";
 import { GuideProfile } from "../Pages/DashBoard/TourGuide/ManageProfileGuide/GuideProfile";
 import { MyAssignedTours } from "../Pages/DashBoard/TourGuide/AssignedTours/MyAssignedTours";
+import { DetailsOfPackage } from "../Pages/Home/Tabs/DetailsOfPackage";
+import { AddStoriesforGuide } from "../Pages/DashBoard/TourGuide/Stories/AddStoriesforGuide";
 
 
 
@@ -39,6 +41,10 @@ const router = createBrowserRouter([
       children:[
         {    path: "/",
             element:<Home></Home>
+        },
+        {
+          path:'package/:id',
+          element:<DetailsOfPackage></DetailsOfPackage>
         },
         {    path: "/packagedetails",
             element:<Privateroute>
@@ -139,6 +145,9 @@ const router = createBrowserRouter([
       {
         path:'myassinedtours',
         element:<MyAssignedTours></MyAssignedTours>
+      },{
+        path:'guideStories',
+        element:<AddStoriesforGuide></AddStoriesforGuide>
       }
      
      

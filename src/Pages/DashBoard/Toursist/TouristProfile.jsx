@@ -17,7 +17,7 @@ export const TouristProfile = () => {
       return res.data
   }
   })
-  // console.log(userDetail);
+  // console.log(userDetail.photo);
 
    const {
         register,
@@ -55,13 +55,9 @@ const handleModal=()=>{
     <div>
       <h2 className="text-2xl font-bold text-gray-700">
         Welcome to the Tourist Profile Management </h2> 
-        <p className="mt-4">
-        {userDetail
-          ? `Hello, ${userDetail.name}. Your email is ${userDetail.email}.`
-          : 'No user details found.'}
-      </p>
+      
       <div className='bg-gray-200 md:w-1/3 p-2'>
-      <img className='h-48 rounded-md mb-4' src={userDetail?.photo} alt="" />
+      <img className='h-48 rounded-md mb-4 object-cover' src={userDetail?.photo} alt="" />
       <div className="space-y-4">
   <p className="text-xl font-semibold text-gray-800">Email:
      <span className="text-gray-500">{userDetail?.email}</span></p>

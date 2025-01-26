@@ -187,19 +187,19 @@ export const Dashboard = () => {
                
                </li>
                <li className="shadow-md rounded-md">
-                 <Link>
+                 <Link to={'guideStories'}>
                    <MdAddChart className="text-xl"></MdAddChart>
                    Add  Stories
                  </Link>
                
                </li>
-               <li className="shadow-md rounded-md">
+               {/* <li className="shadow-md rounded-md">
                  <Link>
                    <MdOutlineManageHistory className="text-xl"></MdOutlineManageHistory>
                    Manage Stories
                  </Link>
                
-               </li>
+               </li> */}
                
                
                </div>

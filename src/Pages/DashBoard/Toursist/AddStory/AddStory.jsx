@@ -2,6 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useAxiosPublic } from "../../../../Hooks/useAxiosPublic";
+import Swal from "sweetalert2";
 const image_hosting_key=import.meta.env.VITE_IMAGE_HOSTING_KEY
 const image_hosting_api=`https://api.imgbb.com/1/upload?key=${image_hosting_key}`
 export const AddStory = () => {
@@ -12,8 +13,7 @@ const axiosPublic=useAxiosPublic()
   console.log(data);
   
   const uploadedImageUrls = [];
-//   Upload image to imagebb and get an url
-// const imagefile={image:data.image[0]}
+
 
   // Loop through each image and upload
   for (let i = 0; i < data.image.length; i++) {
@@ -35,6 +35,7 @@ const axiosPublic=useAxiosPublic()
   const response = await axiosPublic.post("/stories", story);
   if (response.data.insertedId){
     console.log("Story added successfully:", response.data.insertedId);
+    Swal.fire("Story added successfully")
     navigate('/dashboard/manageStory')
   }
 

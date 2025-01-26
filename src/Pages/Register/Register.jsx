@@ -66,7 +66,7 @@ export const Register = () => {
     loginWithGoogle().then((result) => {
       console.log(result.user);
       const userInfo = {
-        name: result.user?.displayname,
+        name: result.user?.displayName,
         email: result.user?.email,
         photo: result.user?.photoURL
         

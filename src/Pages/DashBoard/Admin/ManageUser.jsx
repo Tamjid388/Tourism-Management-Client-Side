@@ -29,6 +29,9 @@ export const ManageUser = () => {
   return (
     <div >
         <h2 className="text-4xl my-4 font-bold">Manage Users</h2>
+        <div>
+         
+        </div>
     <div className="flex justify-evenly my-4 bg-gray-100">
        
     <h2 className="text-3xl font-bold">All Users</h2>
@@ -43,8 +46,8 @@ export const ManageUser = () => {
        <th>No.</th>
        <th>Name</th>
        <th>Email</th>
+       <th>Assign As Admin</th>
        <th>Role</th>
-       <th>Action</th>
      </tr>
    </thead>
    <tbody>
@@ -60,8 +63,9 @@ export const ManageUser = () => {
                </button>}
            </td>
            <td>
-               <button  className="btn text-xl bg-red-500">
-                  <MdDelete className="text-white"></MdDelete>
+               <button   className=" uppercase text-semibold">
+                {user?.role}
+                 
                </button>
            </td>
          </tr>

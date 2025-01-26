@@ -3,6 +3,11 @@ import React, { useState } from 'react'
 import { useAxiosPublic } from '../../../../Hooks/useAxiosPublic'
 import { MdDelete } from 'react-icons/md'
 import { useNavigate } from 'react-router-dom'
+import { Swiper } from 'swiper/react';
+import { SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Pagination } from 'swiper/modules';
 
 
 
@@ -36,12 +41,28 @@ export const ManageStory = () => {
           stories.map((story) => (
             <div key={story._id} className="card bg-base-100 w-96 shadow-xl">
             <figure>
-                {
-                  // Display multiple images if available
+                {/* {
+                 
                   story.images.map((image, index) => (
                     <img key={index} src={image} alt="Story image" />
                   ))
-                }
+                } */}
+
+<Swiper
+                pagination={{ clickable: true }}
+                modules={[Pagination]}
+                className="mySwiper w-full h-60"
+              >
+                {story.images.map((image, index) => (
+                  <SwiperSlide key={index}>
+                    <img
+                      src={image}
+                      alt={`Story ${story.title} image ${index + 1}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
               </figure>
               <div className="card-body">
                 <h2 className="card-title">{story.title}</h2>

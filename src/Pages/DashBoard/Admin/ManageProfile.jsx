@@ -3,10 +3,14 @@ import React, { useContext } from 'react'
 import { useAxiosSecure } from '../../../Hooks/useAxiosSecure';
 import { FaDollarSign } from "react-icons/fa";
 import { Authcontext } from '../../../Provider/Authprovider';
+import { useAxiosPublic } from '../../../Hooks/useAxiosPublic';
+import { useForm } from 'react-hook-form';
+import Swal from 'sweetalert2';
 
 export const ManageProfile = () => {
   const {user}=useContext(Authcontext)
   const axiossecure=useAxiosSecure()
+  const axiosPublic=useAxiosPublic()
   const { isPending, error, data:stats } = useQuery({
     queryKey: ['admin-stats'],
     queryFn: async () => { 
@@ -33,7 +37,7 @@ export const ManageProfile = () => {
 
     // Handle unauthorized access
 if (!user?.role === 'admin') {
-  return <h1>You are not authorized to view this page.</h1>;
+  return <h1 className='text-red-600 text-4xl'>You are not authorized to view this page.</h1>;
 }
 
 // Handle pending state
@@ -41,7 +45,37 @@ if (adminPending) {
   return <h1>Loading...</h1>;
 }
 
+// form
+ const {
+        register,
+        handleSubmit,
+        watch,
+        reset,
+        formState: { errors },
+      } = useForm()
+const onSubmit = (data) =>{
+  console.log(data);
+  const info={
+   name:data.name,
+   photo:data.photo
+  }
 
+  axiosPublic.patch(`/allusers/${Admin.email}`,info)
+  .then(res=>{
+   if(res.data.modifiedCount > 0){
+     console.log("Update Success");
+     Swal.fire("Update Success")
+     refetch()
+   }
+  })
+}
+
+
+
+
+const handleModal=()=>{
+  document.getElementById('my_modal_5').showModal()
+}
 
 
 
@@ -55,7 +89,7 @@ if (adminPending) {
       <div className='p-4 bg-white mb-4 rounded-md shadow-lg flex flex-col justify-center items-center space-y-2'>
         <img className='w-48 h-48 object-cover rounded-full'  src={Admin.photo} alt="" />
         <h1 className='text-xl font-bold'>{Admin.name}</h1>
-        <button className='btn btn-outline'>Edit</button>
+        <button onClick={handleModal} className='btn btn-outline'>Edit</button>
       </div>
 
     </div>
@@ -128,6 +162,50 @@ if (adminPending) {
         </div>
       </div>
     </div>
+         {/* Open the modal using document.getElementById('ID').showModal() method */}
+
+<dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
+  <div className="modal-box">
+    <div>
+      <form  onSubmit={handleSubmit(onSubmit)} className='space-y-4'>
+           {/* Name Input */}
+           <div>
+          <label className="block text-sm font-medium mb-1"
+         >Name</label>
+          <input
+            type="text"
+            placeholder="Your Name"
+            
+            name="name"
+            {...register("name")}
+            className="input input-bordered w-full"
+            required
+          />
+        </div>
+        
+        {/* Image URL Input */}
+        <div>
+          <label className="block text-sm font-medium mb-1">Image URL</label>
+          <input
+            type="url"
+            name="photo"
+            placeholder="Your Image URL"
+            {...register("photo")}
+            className="input input-bordered w-full"
+            required
+          />
+        </div>
+        <button className='btn btn-outline' >Submit</button>
+      </form>
+    </div>
+    <div className="modal-action">
+      <form method="dialog">
+        {/* if there is a button in form, it will close the modal */}
+        <button type='submit' className="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
   </div>
   
   )

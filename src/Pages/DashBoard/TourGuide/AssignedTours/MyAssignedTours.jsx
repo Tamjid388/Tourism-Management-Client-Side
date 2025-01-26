@@ -80,7 +80,7 @@ export const MyAssignedTours = () => {
         <div>
             {
                 mybookings.length === 0 ? (
-                    <h2 className=''>No bookings assigned to you yet.</h2>
+                    <h2 className='text-red-500 text-xl font-bold mt-4'>No bookings assigned to you yet.</h2>
                   ):
                   <div className="overflow-x-auto">
   <table className="table table-zebra my-8">
