@@ -8,11 +8,13 @@ import { useAxiosSecure } from '../../../Hooks/useAxiosSecure';
 import Swal from 'sweetalert2';
 import axios from 'axios';
 import { useQuery } from '@tanstack/react-query';
+import { useNavigate } from 'react-router-dom';
 
 
 export const Bookingform = () => {
    const axiosSecure=useAxiosSecure()
     const {user}=useContext(Authcontext)
+    const navigate=useNavigate()
     const [isModalOpen, setIsModalOpen] = useState(false);
     // console.log(user);
  
@@ -26,12 +28,11 @@ export const Bookingform = () => {
 
 
 
-          // if (!user) {
-          //   return <div>Loading...</div>;
-          // }
+        
           
     const onSubmit = (data) => {
-        
+   
+    
         const bookingData={
          data,
           status:'Pending'
@@ -70,6 +71,11 @@ export const Bookingform = () => {
       return <h1>Loading.....</h1>
     }
   
+    // function handleBooking(){
+    //   if(!user){
+    //     return navigate('/')
+    //   }
+    // }
   return (
     <div className='container mx-auto'>
         {/* Modal Component */}
@@ -227,9 +233,11 @@ export const Bookingform = () => {
 
 
 
-        <button type='submit' className="btn w-full bg-[#63AB45] text-white">
+       <div>
+       <button disabled={!user}  type='submit' className="btn w-full bg-[#63AB45] text-white">
          Book Now
         </button>
+       </div>
 
             </form>
         </div>

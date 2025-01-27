@@ -29,6 +29,8 @@ import { MyAssignedTours } from "../Pages/DashBoard/TourGuide/AssignedTours/MyAs
 import { DetailsOfPackage } from "../Pages/Home/Tabs/DetailsOfPackage";
 import { AddStoriesforGuide } from "../Pages/DashBoard/TourGuide/Stories/AddStoriesforGuide";
 import { AllStory } from "../Pages/Home/TouristStory/AllStory";
+import { Alltrips } from "../Pages/AllTrips/Alltrips";
+import { Aboutuse } from "../Pages/AboutUs/Aboutuse";
 
 
 
@@ -48,13 +50,21 @@ const router = createBrowserRouter([
           element:<DetailsOfPackage></DetailsOfPackage>
         },
         {    path: "/packagedetails",
-            element:<Privateroute>
+            element:
               <PackageDetails></PackageDetails>
-            </Privateroute>
+            
         },
         {
           path:'/community',
           element:<Community></Community>
+        },
+        {
+          path:'/alltrips',
+          element:<Alltrips></Alltrips>
+        },
+        {
+          path:'/about',
+          element:<Aboutuse></Aboutuse>
         },
         
         
@@ -84,7 +94,9 @@ const router = createBrowserRouter([
     },
     {
       path:"dashboard",
-      element:<Dashboard></Dashboard>,
+      element:<Privateroute>
+        <Dashboard></Dashboard>
+      </Privateroute>,
      children:[
       // Admin Routes
       {
