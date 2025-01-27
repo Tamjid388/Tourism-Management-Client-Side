@@ -4,6 +4,7 @@ import { AboutTour } from "./AboutTour/AboutTour"
 import { Bookingform } from "./BookingForm/Bookingform"
 import { Thumbnail } from "./Thumnail/Thumbnail"
 import { Guides } from "./TourGuide/Guides"
+import { TourPlan } from "./TourPlan/TourPlan"
 
 
 export const PackageDetails = () => {
@@ -15,6 +16,7 @@ export const PackageDetails = () => {
       ></Title>
         <Thumbnail></Thumbnail>
         <AboutTour></AboutTour>
+        <TourPlan></TourPlan>
         <Guides></Guides>
         <Bookingform></Bookingform>
         

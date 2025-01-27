@@ -13,10 +13,11 @@ import {
   import {
     EmailIcon,
     FacebookIcon,
-    
+    // Story For Home Page
   } from "react-share";
 import { useAxiosPublic } from '../../../Hooks/useAxiosPublic';
 import { useQuery } from '@tanstack/react-query';
+import { Link } from 'react-router-dom';
 
 export const TouristStory = () => {
   const axiosPublic=useAxiosPublic()
@@ -40,12 +41,12 @@ export const TouristStory = () => {
         subheading="Share your own experiences."
         
         ></Title>
-        <section className="bg-yellow-200 my-16">
-        <div className='grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6  md:py-6'>
+        <section className="px-2 my-12">
+        <div className='grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6  md:py-6'>
   {
           stories.map((story) => (
-            <div key={story._id} className="card bg-base-100 w-96 shadow-xl">
-            <figure>
+            <div key={story._id} className="card bg-base-100  shadow-xl rounded-none">
+            <figure className='p-2'>
             
 
 <Swiper
@@ -66,11 +67,18 @@ export const TouristStory = () => {
               </figure>
               <div className="card-body">
                 <h2 className="card-title">{story.title}</h2>
-                <p>{story.text}</p>
-                <div className="card-actions">
-   
-     
-    </div>
+                <p className='line-clamp-2'>{story.text}</p>
+             
+                <div className="card-actions flex items-center justify-between">
+                  <FacebookShareButton
+                    url={`http://localhost:5173/stories/${story._id}`}
+                    quote={`Check out this amazing story: ${story.title}`}
+                    hashtag="#TravelStories"
+                  >
+                    <FacebookIcon size={32} round />
+                  </FacebookShareButton>
+                  {/* <span className="text-sm text-gray-500">Share this story!</span> */}
+                </div>
               </div>
             </div>
           ))
@@ -78,6 +86,15 @@ export const TouristStory = () => {
   </div>
 
         </section>
+
+        <div>
+          <div className='flex justify-center'>
+          <Link to={'allstoryhome'}>
+          <button className='btn btn-link text-xl'>All Stories</button>
+          </Link>
+
+          </div>
+        </div>
     </div>
   )
 }

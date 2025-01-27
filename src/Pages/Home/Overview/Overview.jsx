@@ -30,9 +30,9 @@ export const Overview = () => {
         referrerPolicy="strict-origin-when-cross-origin"
         allowFullScreen
       ></iframe> */}
-      {/* <ReactPlayer
+      <ReactPlayer
       url={'https://youtu.be/5s8fs_j2xlY?si=IkCsRw8bO9bhitg8'}
-      ></ReactPlayer> */}
+      ></ReactPlayer>
      </div>
     </div>
    </div>

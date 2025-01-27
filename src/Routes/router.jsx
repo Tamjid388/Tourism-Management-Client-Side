@@ -28,6 +28,7 @@ import { GuideProfile } from "../Pages/DashBoard/TourGuide/ManageProfileGuide/Gu
 import { MyAssignedTours } from "../Pages/DashBoard/TourGuide/AssignedTours/MyAssignedTours";
 import { DetailsOfPackage } from "../Pages/Home/Tabs/DetailsOfPackage";
 import { AddStoriesforGuide } from "../Pages/DashBoard/TourGuide/Stories/AddStoriesforGuide";
+import { AllStory } from "../Pages/Home/TouristStory/AllStory";
 
 
 
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
            
           
             
+        },
+        {
+          path:'allstoryhome',
+          element:<AllStory></AllStory>
         }
       ]
     },
