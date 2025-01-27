@@ -63,6 +63,11 @@ const router = createBrowserRouter([
           element:<Alltrips></Alltrips>
         },
         {
+          path:'detailsOfPackages/:id'
+          ,
+          element:<DetailsOfPackage></DetailsOfPackage>
+        },
+        {
           path:'/about',
           element:<Aboutuse></Aboutuse>
         },
