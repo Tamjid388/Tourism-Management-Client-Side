@@ -4,7 +4,10 @@ import { Loading } from '../Component/LoadingSpinner/Loading'
 export const Demo = () => {
   return (
     <div className=''>
-      <Loading></Loading>
+      <div className="">
+ 
+ 
+</div>
     </div>
   )
 }

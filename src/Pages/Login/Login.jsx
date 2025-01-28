@@ -1,13 +1,14 @@
-import React, { useContext } from 'react';
+import React, { useContext, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Authcontext } from '../../Provider/Authprovider';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 
 export const Login = () => {
-  const {user,signIn}=useContext(Authcontext)
+  const {user,signIn,forgetpass}=useContext(Authcontext)
   const navigate=useNavigate()
   const location=useLocation()
+  const emailRef=useRef()
   const from=location.state?.from?.pathname || "/"
   // razin@gmail.com pass1234
    const {
@@ -36,6 +37,31 @@ export const Login = () => {
          });
         }
 
+        function handlePassReset() {
+          const email = watch("email"); // Access email value from React Hook Form
+          if (email) {
+            console.log("Resetting password for:", email);
+            forgetpass(email)
+              .then(() => {
+                Swal.fire(
+                  "Password Reset",
+                  "Check your email to reset your password",
+                  "success"
+                );
+              })
+              .catch((error) => {
+                console.error("Error resetting password:", error);
+                Swal.fire("Error", error.message, "error");
+              });
+          } else {
+            Swal.fire("Error", "Please enter your email first", "warning");
+          }
+        }
+        
+        
+
+
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="w-full max-w-md bg-white rounded-lg shadow-md p-6">
@@ -47,6 +73,7 @@ export const Login = () => {
           <input
             type="email"
             name="email"
+            ref={emailRef}
             placeholder="Your Email"
             {...register("email")}
             className="input input-bordered w-full"
@@ -72,6 +99,7 @@ export const Login = () => {
           <button  type="submit" className="btn btn-primary w-full mt-4">
             Login
           </button>
+          <button onClick={handlePassReset} className='text-sm underline'>Forget Password</button>
 
           <div className="divider">OR</div>
 

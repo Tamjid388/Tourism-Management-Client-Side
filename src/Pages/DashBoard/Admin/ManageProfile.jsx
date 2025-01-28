@@ -31,19 +31,7 @@ export const ManageProfile = () => {
       
     },
   })
-  if(isPending){
-    return <h1>Loading....</h1>
-  }
 
-    // Handle unauthorized access
-if (!user?.role === 'admin') {
-  return <h1 className='text-red-600 text-4xl'>You are not authorized to view this page.</h1>;
-}
-
-// Handle pending state
-if (adminPending) {
-  return <h1>Loading...</h1>;
-}
 
 // form
  const {
@@ -76,7 +64,14 @@ const onSubmit = (data) =>{
 const handleModal=()=>{
   document.getElementById('my_modal_5').showModal()
 }
+if(isPending){
+  return <h1>Loading....</h1>
+}
 
+
+if (adminPending) {
+return <h1>Loading...</h1>;
+}
 
 
   return (

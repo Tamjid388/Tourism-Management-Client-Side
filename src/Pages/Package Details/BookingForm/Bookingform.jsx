@@ -38,7 +38,7 @@ export const Bookingform = () => {
           status:'Pending'
         }
         console.log(bookingData)
-        axios.post('http://localhost:5000/bookings',bookingData)
+        axios.post('https://tourism-management-server-side-olive.vercel.app//bookings',bookingData)
         .then(res=>{
           if (res.data.insertedId){
             console.log("worked");

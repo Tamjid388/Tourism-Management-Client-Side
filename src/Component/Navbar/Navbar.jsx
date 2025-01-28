@@ -4,34 +4,38 @@ import logo from "../../assets/Link.png"
 import { useContext } from "react"
 import { Authcontext } from "../../Provider/Authprovider"
 import Swal from "sweetalert2"
+import { ProfileDropdown } from "./ProfileDropdown"
 
 export const Navbar = () => {
   const {user,signOutUser}=useContext(Authcontext)
-  const handleSignout=()=>{
-    signOutUser()
-    .then(()=>{
-      console.log("Signout Successfull");
-      Swal.fire({
-        title: "Signout Successfull!",
-        icon: "success",
-        draggable: true
-      });
-      
-    })
-    .catch((error)=>{
-      console.log("Signout Failed",error);
-    })
-  }
+
+
+
+
+
+  
  
     const menu=<>
     <li><NavLink to={"/"}>Home</NavLink></li>
-    <li><NavLink to={"/packagedetails"}>Package Details</NavLink></li>
+    {
+       user && <li><NavLink to={"/packagedetails"}>Package Details</NavLink></li>
+    }
+    
     <li><NavLink to={"/community"}>Community</NavLink></li>
     <li><NavLink to={"/alltrips"}>All Trips</NavLink></li>
     <li><NavLink to={"/about"}>About us</NavLink></li>
+   
+   {
+    !user && 
+<>
+<li><NavLink to={"/register"}>Register</NavLink></li>
 
-    <li><NavLink to={"/register"}>Register</NavLink></li>
-    <li><NavLink to={"dashboard/dashboardWelcome"}>Dashboard</NavLink></li>
+</>
+
+
+
+
+   }
    
     </>
   return (
@@ -72,7 +76,14 @@ export const Navbar = () => {
   <div className="navbar-end">
     {
       user?
-      <Link onClick={handleSignout} className="btn">Logout</Link>
+
+
+      <>
+
+<ProfileDropdown></ProfileDropdown>
+      {/* .............. */}
+    
+      </>
     :
     <Link to={'login'} className="btn">Login</Link>
     }

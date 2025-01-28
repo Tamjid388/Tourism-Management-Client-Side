@@ -2,7 +2,7 @@
 
 // export const axiosSecure=axios.create(
 //     {
-//         baseURL:'http://localhost:5000'
+//       
 //     }
 // )
 // export const useAxiosSecure = () => {
@@ -16,7 +16,7 @@ import { Authcontext } from "../Provider/Authprovider"
 
 
 export const axiossecure=axios.create({
-    baseURL:'http://localhost:5000'
+    baseURL:'https://tourism-management-server-side-olive.vercel.app/'
 })
 export const useAxiosSecure = () => {
     const navigate =useNavigate()
