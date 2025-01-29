@@ -40,14 +40,14 @@ export const Guides = () => {
             guides.map((guide,idx)=><div key={idx} className="card card-compact bg-base-100  shadow-xl">
             <figure>
               <img className='h-48 w-48 object-cover rounded-[100px]'
-                src={guide.profileImage}
+                src={guide.profileImage || guide.photo}
                 alt="guide" />
             </figure>
             <div className="card-body  text-center">
               <h2 className="text-2xl font-bold text-center">{guide.name}</h2>
-              <p className='text-xl font-semibold'>
+              {/* <p className='text-xl font-semibold'>
               {guide.specialty}
-              </p>
+              </p> */}
 
               <div className="card-actions justify-center">
            
