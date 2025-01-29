@@ -8,12 +8,15 @@ import { useAxiosSecure } from '../../../Hooks/useAxiosSecure';
 import Swal from 'sweetalert2';
 import axios from 'axios';
 import { useQuery } from '@tanstack/react-query';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { ConfettiEffect } from '../../../Component/Confetti/ConfettiEffect';
 
 
 export const Bookingform = () => {
    const axiosSecure=useAxiosSecure()
     const {user}=useContext(Authcontext)
+    const [count,setCount]=useState(0)
+    const [confettimodal,setConfettimodal]=useState(false)
     const navigate=useNavigate()
     const [isModalOpen, setIsModalOpen] = useState(false);
     // console.log(user);
@@ -28,7 +31,7 @@ export const Bookingform = () => {
 
 
 
-        
+        console.log(count);
           
     const onSubmit = (data) => {
    
@@ -37,8 +40,13 @@ export const Bookingform = () => {
          data,
           status:'Pending'
         }
+        setCount(count+1)
+        if(count===3){
+          console.log(count);
+         setConfettimodal(true)
+        }
         console.log(bookingData)
-        axios.post('https://tourism-management-server-side-olive.vercel.app//bookings',bookingData)
+        axios.post('https://tourism-management-server-side-olive.vercel.app/bookings',bookingData)
         .then(res=>{
           if (res.data.insertedId){
             console.log("worked");
@@ -67,32 +75,42 @@ export const Bookingform = () => {
     
       
     })
+    function handleconfetti(){
+     setCount(count+1)
+     if(count===3){
+      setConfettimodal(true)
+     }
+      
+    }
+
+    function handleCloseconfetti(){
+      setConfettimodal(false)
+    }
+
     if(isPending){
       return <h1>Loading.....</h1>
     }
   
-    // function handleBooking(){
-    //   if(!user){
-    //     return navigate('/')
-    //   }
-    // }
+   
   return (
     <div className='container mx-auto'>
+ {/*  */}
+
         {/* Modal Component */}
         {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
           <div className="modal modal-open">
             <div className="modal-box">
-              <h2 className="text-2xl font-bold mb-4">Confirm your Booking</h2>
-              <p>Your booking has been successfully placed!</p>
+              <h2 className="text-2xl font-bold mb-4">Your booking has been successfully placed!</h2>
+             
               <div className="modal-action">
-                <a
+                <Link  to={'/dashboard/mybookings'}
                  
                   className="btn bg-[#63AB45] text-white"
                   onClick={() => setIsModalOpen(false)} // Close modal after redirection
                 >
                   Go to My Bookings
-                </a>
+                </Link>
               </div>
               <div className="modal-action">
       <form method="dialog">
@@ -234,12 +252,29 @@ export const Bookingform = () => {
 
 
        <div>
-       <button disabled={!user}  type='submit' className="btn w-full bg-[#63AB45] text-white">
+       <button disabled={!user}   type='submit' className="btn w-full bg-[#63AB45] text-white">
          Book Now
         </button>
        </div>
 
             </form>
+        </div>
+        {/*Confetti Modal */}
+        <div>
+      {
+        confettimodal &&
+          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+            <ConfettiEffect></ConfettiEffect>
+          <div className="bg-white p-6 rounded-lg shadow-lg w-96">
+            <h2 className="text-xl font-bold mb-4"></h2>
+            <p className='font-bold text-green-600'> 🎉 Congratulations! You've booked more than 3 times!</p>
+            <button 
+            onClick={()=>handleCloseconfetti(false)}
+            className="mt-4 btn bg-green-500">Close</button>
+          </div>
+        </div>
+      }
+
         </div>
     </div>
   )

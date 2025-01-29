@@ -44,8 +44,8 @@ The Tourist Guide site is an online platform designed to help travelers explore 
 ---
 
 ## 💻 Admin Credentials
-- **Username**: `admin@example.com`
-- **Password**: `admin123`
+- **Username**: `admin2@gmail.com`
+- **Password**: `Str0ngP@ssword1`
 
 ---
 

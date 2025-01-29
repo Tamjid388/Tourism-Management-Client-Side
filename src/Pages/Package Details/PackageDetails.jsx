@@ -1,4 +1,7 @@
-import img1 from "../../assets/Banner/banner2.jpg"
+
+
+
+
 import { Title } from "../../Component/SectionTitle/Title"
 import { AboutTour } from "./AboutTour/AboutTour"
 import { Bookingform } from "./BookingForm/Bookingform"
@@ -18,6 +21,7 @@ export const PackageDetails = () => {
         <AboutTour></AboutTour>
         <TourPlan></TourPlan>
         <Guides></Guides>
+      
         <Bookingform></Bookingform>
         
     </div>
