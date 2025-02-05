@@ -36,6 +36,22 @@ The Tourist Guide site is an online platform designed to help travelers explore 
 
 ---  
 
+## 🛠 Dependencies Used
+
+This project utilizes the following key dependencies:
+
+- **React** (`react`, `react-dom`) – Frontend library for building UI  
+- **React Router** (`react-router-dom`) – Handles navigation between pages  
+- **Firebase** – Authentication and Firestore database  
+- **Axios** – HTTP requests for fetching data  
+- **React Hook Form** – Form handling and validation  
+- **React Datepicker** – For selecting booking dates  
+- **Framer Motion** (`motion`) – Animations and UI transitions  
+- **SweetAlert2** – User-friendly alerts and notifications  
+- **Stripe** (`@stripe/react-stripe-js`, `@stripe/stripe-js`) – Payment integration  
+- **Swiper** – Image sliders and carousels  
+
+
 ## 📂 Folder Structure  
 ```plaintext  
 📦 project-directory  
