@@ -3,7 +3,7 @@ import { Title } from '../../../Component/SectionTitle/Title'
 
 export const FAQ = () => {
   return (
-    <div className='container mx-auto my-12'>
+    <div className='container mx-auto my-16'>
        <div className='pt-4'>
        <Title  heading={"Frequently Asked question"}></Title>
        </div>

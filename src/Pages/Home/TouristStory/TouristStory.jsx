@@ -41,7 +41,7 @@ export const TouristStory = () => {
         subheading="Share your own experiences."
         
         ></Title>
-        <section className="px-2 my-12">
+        <section className="px-2 mt-12">
         <div className='grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6  md:py-6'>
   {
           stories.map((story) => (
