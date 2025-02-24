@@ -4,7 +4,7 @@ import logo from "../../assets/Link.png"
 export const Footer = () => {
   return (
     <div>
-        <footer className="footer container mx-auto  bg-gray-100 p-10 flex flex-col md:flex-row justify-between">
+        <footer className="footer container mx-auto  bg-base-100 p-10 flex flex-col md:flex-row justify-between">
   <aside>
    <img className="w-50" src={logo} alt="" />
     <p>

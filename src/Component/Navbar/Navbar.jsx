@@ -5,6 +5,7 @@ import { useContext } from "react"
 import { Authcontext } from "../../Provider/Authprovider"
 import Swal from "sweetalert2"
 import { ProfileDropdown } from "./ProfileDropdown"
+import { Toggle } from "../Toggle/Toggle"
 
 export const Navbar = () => {
   const {user,signOutUser}=useContext(Authcontext)
@@ -79,7 +80,7 @@ export const Navbar = () => {
 
 
       <>
-
+<Toggle></Toggle>
 <ProfileDropdown></ProfileDropdown>
       {/* .............. */}
     
