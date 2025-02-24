@@ -17,6 +17,7 @@ export const ProfileDropdown = () => {
           
         },
       })
+   
       if(isPending){
         return <h1>Loading....</h1>
       }
@@ -53,7 +54,13 @@ export const ProfileDropdown = () => {
         w-52 p-3 font-semibold shadow space-y-2">
        
       
-       <Link className='text-green-600' to={"dashboard/dashboardWelcome"}>Dashboard</Link>
+       {/* <Link className='text-green-600' to={"dashboard/dashboardWelcome"}>Dashboard</Link> */}
+       {
+       userprofile?.role==="admin"&&
+        <Link 
+        className='text-green-600'
+         to={"dashboard/manageProfile"}>Dashboard</Link>
+       }
       
        <li className=''>
        {userprofile?.name}

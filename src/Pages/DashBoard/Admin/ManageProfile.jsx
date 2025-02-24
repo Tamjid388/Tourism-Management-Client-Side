@@ -75,13 +75,13 @@ return <h1>Loading...</h1>;
 
 
   return (
-    <div className="p-6 bg-gray-100 min-h-screen">
-    <h1 className="text-4xl font-bold my-6 text-gray-800 text-center">
+    <div className="p-6 bg-base-100 min-h-screen">
+    <h1 className="text-4xl font-bold my-6   text-center">
       Welcome to Your Profile
     </h1>
     <div>
 
-      <div className='p-4 bg-white mb-4 rounded-md shadow-lg flex flex-col justify-center items-center space-y-2'>
+      <div className='p-4 bg-base-100 mb-4 rounded-md shadow-lg flex flex-col justify-center items-center space-y-2'>
         <img className='w-48 h-48 object-cover rounded-full'  src={Admin.photo} alt="" />
         <h1 className='text-xl font-bold'>{Admin.name}</h1>
         <button onClick={handleModal} className='btn btn-outline'>Edit</button>
