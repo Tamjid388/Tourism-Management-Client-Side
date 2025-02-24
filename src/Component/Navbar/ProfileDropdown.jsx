@@ -61,6 +61,18 @@ export const ProfileDropdown = () => {
         className='text-green-600'
          to={"dashboard/manageProfile"}>Dashboard</Link>
        }
+       {
+       userprofile?.role==="tourist"&&
+        <Link 
+        className='text-green-600'
+         to={"dashboard/manageTouristProfile"}>Dashboard</Link>
+       }
+       {
+       userprofile?.role==="admin"&&
+        <Link 
+        className='text-green-600'
+         to={"dashboard/manageProfile"}>Dashboard</Link>
+       }
       
        <li className=''>
        {userprofile?.name}

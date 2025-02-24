@@ -3,6 +3,7 @@ import { Authcontext } from '../../../Provider/Authprovider'
 import { axiosPublic, useAxiosPublic } from '../../../Hooks/useAxiosPublic'
 import { useQuery } from '@tanstack/react-query'
 import { useForm } from 'react-hook-form'
+import { Rechart } from './Rechart/Rechart'
 
 export const TouristProfile = () => {
   
@@ -17,6 +18,7 @@ export const TouristProfile = () => {
       return res.data
   }
   })
+
   // console.log(userDetail.photo);
 
    const {
@@ -56,9 +58,9 @@ const handleModal=()=>{
       <h2 className="text-2xl font-bold text-gray-700">
         Welcome to the Tourist Profile Management </h2> 
       
-      <div className='bg-gray-200 md:w-1/3 p-2'>
+      <div className='bg-gray-200 md:w-1/3 md:p-8'>
       <img className='h-48 rounded-md mb-4 object-cover' src={userDetail?.photo} alt="" />
-      <div className="space-y-4">
+      <div className="space-y-4 ">
   <p className="text-xl font-semibold text-gray-800">Email:
      <span className="text-gray-500">{userDetail?.email}</span></p>
   <p className="text-xl font-semibold text-gray-800">Name: 
@@ -72,7 +74,7 @@ const handleModal=()=>{
         className='btn btn-sm my-4 bg-green-400 text-white'>Edit</button>
 
       </div>
-
+<Rechart></Rechart>
 
 
       {/* Open the modal using document.getElementById('ID').showModal() method */}
