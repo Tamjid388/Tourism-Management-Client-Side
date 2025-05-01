@@ -12,13 +12,12 @@ export const Overview = () => {
      <div className='flex
       flex-col-reverse md:flex-row  items-center  container mx-auto w-full my-16'>
         
-        <div className="px-3 py-4 md:space-y-12">
-       <h1 className='text-2xl md:text-5xl font-bold mb-2'> 
+        <div className="px-3 py-4 md:space-y-12 md:w-1/2">
+       <h1 className='text-2xl md:text-5xl font-bold mb-2 font-mansalva'> 
        Discover Unique Outdoor Adventures for Everyone</h1>
-<p className='text-base sm:text-lg md:text-3xl'>Find an adventure, create a hobby that is 
-    related to nature in its vert
-     pristiene shape for your goodness. Tempor incididunt ut labore. Et dolore 
-    magna aliqua. Quitts ipsum suspendisse ultrices gravida.</p>
+<p className='font-lato text-base sm:text-lg md:text-3xl font-semibold'>  Explore nature in its purest form and ignite your passion for adventure. Whether it's hiking,
+      kayaking, or camping, create memories that last a lifetime. Step away from the noise and
+      reconnect with the outdoors.</p>
         </div>
      
      <div className="md:w-1/2 h-[400px]">

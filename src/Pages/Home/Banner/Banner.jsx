@@ -11,13 +11,13 @@ export const Banner = () => {
        
         <div 
         className="space-y-6 absolute inset-0 flex flex-col text-center items-center justify-center">
-        <h1 className="text-4xl md:text-8xl text-white font-bold mb-4 opacity-90">
+        <h1 className="font-mansalva text-4xl md:text-8xl text-white font-bold mb-4 opacity-90">
       Welcome to The Tourist Guide
     </h1>
-    <p className="text-lg md:text-4xl text-white font-bold opacity-90">
+    <p className="font-mansalva text-lg md:text-4xl text-white font-bold opacity-90">
       Explore the beauty and culture of Bangladesh.
     </p>
-    <button className="btn rounded-none">
+    <button className="btn rounded-none font-lato">
         View Adventures
     </button>
 

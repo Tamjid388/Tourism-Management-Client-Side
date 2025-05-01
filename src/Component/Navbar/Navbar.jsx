@@ -60,7 +60,7 @@ export const Navbar = () => {
       </div>
       <ul
         tabIndex={0}
-        className="menu space-y-2 menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52  p-2 shadow ">
+        className="menu font-lato space-y-2 menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52  p-2 shadow ">
        {menu}
       </ul>
     </div>
@@ -70,7 +70,7 @@ export const Navbar = () => {
     </div>
   </div>
   <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1 space-x-1">
+    <ul className="menu menu-horizontal px-1 space-x-1 font-lato">
     {menu}
     </ul>
   </div>
