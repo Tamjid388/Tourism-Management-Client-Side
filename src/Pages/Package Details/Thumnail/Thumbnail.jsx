@@ -6,14 +6,14 @@ import 'lightgallery/css/lg-zoom.css';
 import 'lightgallery/css/lg-thumbnail.css';
 
 // importing images
-import th2 from "../../../assets/Thumbnail/th2.jpg"
-import th3 from "../../../assets/Thumbnail/th3.jpg"
-import th4 from "../../../assets/Thumbnail/th4.jpg"
-import th5 from "../../../assets/Thumbnail/th5.jpg"
-import th6 from "../../../assets/Thumbnail/th6.jpg"
-import th7 from "../../../assets/Thumbnail/th7.jpg"
-import th8 from "../../../assets/Thumbnail/th8.jpg"
-import th9 from "../../../assets/Thumbnail/th9.jpg"
+import th2 from "../../../assets/Thumbnail/th2.webp"
+import th3 from "../../../assets/Thumbnail/th3.webp"
+import th4 from "../../../assets/Thumbnail/th4.webp"
+import th5 from "../../../assets/Thumbnail/th5.webp"
+import th6 from "../../../assets/Thumbnail/th6.webp"
+import th7 from "../../../assets/Thumbnail/th7.webp"
+import th8 from "../../../assets/Thumbnail/th8.webp"
+import th9 from "../../../assets/Thumbnail/th9.webp"
 
 const images = [
     { src: th2, alt: 'Image 2' },
