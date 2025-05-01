@@ -49,6 +49,7 @@ export const Thumbnail = () => {
             {images.map((image, index) => (
       <a key={index} href={image.src} data-src={image.src} className="col-span-1">
         <img
+        loading='lazy'
           src={image.src}
           alt={image.alt}
           className="h-48 md:h-80 w-full object-cover"

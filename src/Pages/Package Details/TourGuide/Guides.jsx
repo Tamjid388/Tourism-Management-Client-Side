@@ -39,7 +39,7 @@ export const Guides = () => {
          {
             guides.map((guide,idx)=><div key={idx} className="card card-compact bg-base-100  shadow-xl">
             <figure>
-              <img className='h-48 w-48 object-cover rounded-[100px]'
+              <img loading='lazy' className='h-48 w-48 object-cover rounded-[100px]'
                 src={guide.profileImage || guide.photo}
                 alt="guide" />
             </figure>

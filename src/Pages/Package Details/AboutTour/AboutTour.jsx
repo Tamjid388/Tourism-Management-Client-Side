@@ -32,7 +32,7 @@ export const AboutTour = () => {
     <button className='btn bg-[#63AB45]  text-white '>About More</button>
     </div>
     <div className="w-5/6">
-      <img className='h-[400px] w-full object-cover' src={bg} alt="" />
+      <img loading='lazy' className='h-[400px] w-full object-cover' src={bg} alt="" />
 
     </div>
 
