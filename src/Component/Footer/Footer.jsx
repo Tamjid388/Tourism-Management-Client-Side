@@ -23,10 +23,10 @@ export const Footer = () => {
     <h6 className="footer-title">Social</h6>
     <div className="grid grid-flow-col gap-4">
    
-      <a href="https://github.com/Tamjid388">
+      <a target="_blank" href="https://github.com/Tamjid388">
       <span className="text-2xl"><FaGithub /></span>
       </a>
-      <a href="https://www.facebook.com/tamjid.razin/">
+      <a target="_blank" href="https://www.facebook.com/tamjid.razin/">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
