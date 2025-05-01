@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import React from 'react'
 import { useAxiosSecure } from '../../Hooks/useAxiosSecure';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 export const Alltrips = () => {
     const axiosSecure=useAxiosSecure()
@@ -19,7 +20,10 @@ export const Alltrips = () => {
       }
   return (
     <div className='py-16'>
-        <h1 className='text-4xl font-bold  py-8 text-center'>Alltrips</h1>
+        <Helmet>
+             <title>All Trips | TripNest</title>
+             </Helmet>
+        <h1 className='text-4xl font-bold  py-8 text-center'>All Trips</h1>
 
         <div className='container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
             {

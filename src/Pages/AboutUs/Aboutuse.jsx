@@ -1,8 +1,12 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 export const Aboutuse = () => {
   return (
     <div className="container mx-auto p-8 py-16">
+        <Helmet>
+             <title>About | TripNest</title>
+             </Helmet>
       <h1 className="text-4xl font-bold text-center mb-8">About Me</h1>
       <div className="bg-base-200 p-6 rounded-lg shadow-lg  mx-auto">
         {/* Developer Information */}

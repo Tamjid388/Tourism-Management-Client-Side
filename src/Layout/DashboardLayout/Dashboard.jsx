@@ -9,6 +9,7 @@ import { useAdmin } from "../../Hooks/useAdmin";
 import { FaPeopleRoof } from "react-icons/fa6";
 import { useQuery } from "@tanstack/react-query";
 import { useAxiosSecure } from "../../Hooks/useAxiosSecure";
+import { Helmet } from "react-helmet-async";
 
 export const Dashboard = () => {
     const {user}=useContext(Authcontext)
@@ -35,6 +36,9 @@ export const Dashboard = () => {
   return (
     <div className="flex ">
       <div className="drawer lg:drawer-open">
+          <Helmet>
+               <title>Dashboard| TripNest</title>
+               </Helmet>
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col  items-center ">
           {/* Page content here */}

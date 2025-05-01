@@ -7,10 +7,15 @@ import { FAQ } from './FAQ/FAQ'
 import { MainTab } from './Tabs/MainTab'
 import { Makingadventure } from './MakingAdventure/Makingadventure'
 import { Framertutorial } from './FramerTutorial/framertutorial'
+import { Helmet } from 'react-helmet-async'
 
 export const Home = () => {
   return (
     <div>
+
+       <Helmet>
+       <title>Home | TripNest</title>
+       </Helmet>
         <Banner></Banner>
         <Overview></Overview>
         <MainTab></MainTab>
