@@ -30,7 +30,7 @@ export const Alltrips = () => {
                 packages.map((pack,idx)=>
                 <div key={idx} className="card card-compact bg-base-100  shadow-xl">
                     <figure>
-                      <img className='h-[300px]'
+                      <img className='h-[300px] rounded-md'
                         src={pack.imageUrl}
                         alt="Shoes" />
                     </figure>

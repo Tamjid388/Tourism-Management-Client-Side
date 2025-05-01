@@ -32,11 +32,12 @@ export const Community = () => {
         <title>Community | TripNest</title>
       </Helmet>
       <div>
-        <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-8  md:py-6">
+        <div className="grid  grid-cols-1 md:grid-cols-2
+         lg:grid-cols-4 gap-6 my-8  md:py-6">
           {stories.map((story) => (
             <div
               key={story._id}
-              className="card bg-base-100 w-96 rounded-none shadow-xl"
+              className="card bg-base-100  rounded-none shadow-xl"
             >
               <figure className="p-2">
                 <Swiper

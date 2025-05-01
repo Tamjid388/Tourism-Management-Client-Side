@@ -1,15 +1,19 @@
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import logo from "../../assets/Link.png"
 
 export const Footer = () => {
   return (
     <div>
-        <footer className="footer container mx-auto  bg-base-100 p-10 flex flex-col md:flex-row justify-between">
+        <footer className="footer container mx-auto  bg-base-100 p-4 md:p-10 flex flex-col md:flex-row justify-between">
   <aside>
    <img className="w-50" src={logo} alt="" />
-    <p>
+    <p className="font-semibold font-lato opacity-80">
       Tripnest Tourist Agency
       <br />
+      
+    Discover the beauty of Bangladesh with expert guides and unforgettable experiences.
+    <br />
+    &copy; {new Date().getFullYear()} Tripnest. All rights reserved.
      
     </p>
   </aside>
@@ -25,6 +29,11 @@ export const Footer = () => {
    
       <a target="_blank" href="https://github.com/Tamjid388">
       <span className="text-2xl"><FaGithub /></span>
+      </a>
+      <a target="_blank" href="https://www.linkedin.com/in/tamjid-ahmed-profile59326b/">
+      <span className="text-2xl">
+        <FaLinkedin></FaLinkedin>
+      </span>
       </a>
       <a target="_blank" href="https://www.facebook.com/tamjid.razin/">
         <svg
