@@ -26,7 +26,7 @@ export const TouristStory = () => {
     queryFn: async () => { 
       
       const response = await axiosPublic.get('/stories/random');
-      console.log(response.data); 
+     
       return response.data;
       
     },

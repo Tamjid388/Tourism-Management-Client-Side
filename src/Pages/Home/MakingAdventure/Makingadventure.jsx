@@ -5,7 +5,7 @@ export const Makingadventure = () => {
   return (
     <div className="mx-auto container my-16 flex 
     flex-col-reverse md:flex-row  px-2 ">
-      <div className="md:w-1/2 bg-base-200 flex flex-col
+      <div className="md:w-1/2 bg-base-200 flex flex-col p-4
        justify-center md:px-20 space-y-4 md:space-y-12">
         <h1 className="text-3xl font-semibold font-serif mt-4 ">
           Making Adventure tours, activities <br />
@@ -19,7 +19,7 @@ export const Makingadventure = () => {
       </div>
 
       <div className="md:w-1/2  ">
-        <img className="rounded-lg" src={img1} alt="" />
+        <img className="rounded-lg p-4" src={img1} alt="" />
       </div>
     </div>
   );

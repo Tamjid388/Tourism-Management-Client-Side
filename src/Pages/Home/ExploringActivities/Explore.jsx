@@ -10,7 +10,7 @@ export const Explore = () => {
       queryKey: ['resources'],
       queryFn: async () => { 
         const response = await axiosPublic.get('/resources');
-        console.log(response.data); 
+        // console.log(response.data); 
         return response.data;
         
       },

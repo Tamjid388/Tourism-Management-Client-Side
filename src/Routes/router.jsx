@@ -31,6 +31,7 @@ import { AddStoriesforGuide } from "../Pages/DashBoard/TourGuide/Stories/AddStor
 import { AllStory } from "../Pages/Home/TouristStory/AllStory";
 import { Alltrips } from "../Pages/AllTrips/Alltrips";
 import { Aboutuse } from "../Pages/AboutUs/Aboutuse";
+import { ProductDetailsPage } from "../Pages/ProductDetailsPage/ProductDetailsPage";
 
 
 
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
         {
           path:'/community',
           element:<Community></Community>
+        },
+        {
+          path:'/products/:id',
+          element:<ProductDetailsPage></ProductDetailsPage>
         },
         {
           path:'/alltrips',

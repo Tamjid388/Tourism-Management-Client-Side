@@ -12,7 +12,7 @@ export const ProfileDropdown = () => {
         queryKey: ['profileuser',user?.email],
         queryFn: async () => { 
           const response = await axiosPublic.get(`/user/${user.email}`);
-          console.log(response.data); 
+          // console.log(response.data); 
           return response.data;
           
         },

@@ -6,7 +6,7 @@ import { MeetOurGuidesHome } from './MeetOurGuidesHome';
 
 export const MainTab = () => {
   return (
-    <div className='container mx-auto'>
+    <div className='container mx-auto px-2'>
    <div>
     <Title 
     subheading={'Explore Our Packages & Meet the Guides'}
@@ -17,7 +17,7 @@ export const MainTab = () => {
     <Tabs>
     <TabList>
       <Tab>Our Packages</Tab>
-      <Tab>Tour Guides</Tab>
+      {/* <Tab>Tour Guides</Tab> */}
     </TabList>
 
     <TabPanel>

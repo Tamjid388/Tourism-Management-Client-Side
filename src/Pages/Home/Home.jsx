@@ -8,6 +8,7 @@ import { MainTab } from './Tabs/MainTab'
 import { Makingadventure } from './MakingAdventure/Makingadventure'
 import { Framertutorial } from './FramerTutorial/framertutorial'
 import { Helmet } from 'react-helmet-async'
+import { Products } from './Products/Products'
 
 export const Home = () => {
   return (
@@ -20,6 +21,7 @@ export const Home = () => {
         <Overview></Overview>
         <MainTab></MainTab>
         <TouristStory></TouristStory>
+        <Products></Products>
         <Makingadventure></Makingadventure>
         {/* <Framertutorial></Framertutorial> */}
         <Explore></Explore>

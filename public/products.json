@@ -1,0 +1,277 @@
+[
+    {
+      "id": 1,
+      "name": "Waterproof Backpack",
+      "description": "Durable and lightweight backpack perfect for hiking and adventure travel.",
+      "price": 1500,
+      "image": "https://i.ibb.co.com/Vcyg4vJ2/bag.webp",
+      "category": "Gear",
+      "additional_information": {
+        "color": "Black",
+        "material": "Nylon",
+        "dimensions": "50L capacity",
+        "weight": "1.2 kg"
+      },
+      "shipping": {
+        "delivery_time": "3-5 business days",
+        "shipping_fee": "Free"
+      },
+      "reviews": [
+        {
+          "rating": 4.5,
+          "comment": "Perfect for long hikes, very durable!"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Tracking Boots",
+      "description": "Rugged boots built for comfort and support on long treks.",
+      "price": 2200.00,
+      "image": "https://i.ibb.co.com/Xfsb9tfP/boot.webp",
+      "category": "Footwear",
+      "additional_information": {
+        "material": "Leather",
+        "sizes": "7, 8, 9, 10, 11",
+        "water_resistant": "Yes"
+      },
+      "shipping": {
+        "delivery_time": "5-7 business days",
+        "shipping_fee": "120"
+      },
+      "reviews": [
+        {
+          "rating": 4.8,
+          "comment": "Extremely comfortable and durable for long hikes."
+        }
+      ]
+    },
+
+    {
+      "id": 8,
+      "name": "Tracking Compass",
+      "description": "Precision compass designed for navigation during outdoor activities.",
+      "price": 19.99,
+      "image": "https://i.ibb.co.com/gZdDHgXT/compass.webp",
+      "category": "Tools",
+      "additional_information": {
+        "material": "Aluminum",
+        "features": "Waterproof, durable"
+      },
+      "shipping": {
+        "delivery_time": "4-6 business days",
+        "shipping_fee": "$2.50"
+      },
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Accurate and sturdy. Perfect for trekking."
+        }
+      ]
+    },
+  
+    {
+      "id": 10,
+      "name": "Campers Knife",
+      "description": "Compact knife designed for camping with multiple tools and functions.",
+      "price": 24.99,
+      "image": "https://i.ibb.co.com/KjcQCBrw/knife.jpg",
+      "category": "Tools",
+      "additional_information": {
+        "material": "Stainless Steel",
+        "tools": "Knife, corkscrew, screwdriver, can opener"
+      },
+      "shipping": {
+        "delivery_time": "3-5 business days",
+        "shipping_fee": "$3.50"
+      },
+      "reviews": [
+        {
+          "rating": 4.5,
+          "comment": "Great all-around knife for camping."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Portable Water Filter",
+      "description": "Filter clean drinking water from any source — a must-have for outdoor trips.",
+      "price": 29.95,
+      "image": "https://i.ibb.co.com/zVDKqxvn/waterfilter.webp",
+      "category": "Survival",
+      "additional_information": {
+        "capacity": "1 liter",
+        "material": "Plastic",
+        "filter_life": "1000 liters"
+      },
+      "shipping": {
+        "delivery_time": "5-7 business days",
+        "shipping_fee": "$5.00"
+      },
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Great for camping trips. I never go without it."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Travel First Aid Kit",
+      "description": "Compact and essential first aid kit for minor injuries during travel.",
+      "price": 15.50,
+      "image": "https://i.ibb.co.com/FvWcMQ6/firstAid.webp",
+      "category": "Health",
+      "additional_information": {
+        "contents": "Bandages, antiseptic wipes, gauze, scissors, tweezers"
+      },
+      "shipping": {
+        "delivery_time": "3-5 business days",
+        "shipping_fee": "Free"
+      },
+      "reviews": [
+        {
+          "rating": 4,
+          "comment": "Good value for money. I feel safer traveling with it."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Compact Sleeping Bag",
+      "description": "Lightweight sleeping bag designed for easy packing and warmth.",
+      "price": 65.00,
+      "image": "https://i.ibb.co.com/9m9KC3x2/sleepBag.webp",
+      "category": "Gear",
+      "additional_information": {
+        "material": "Polyester",
+        "dimensions": "200x80 cm",
+        "temperature_rating": "-10°C"
+      },
+      "shipping": {
+        "delivery_time": "4-6 business days",
+        "shipping_fee": "Free"
+      },
+      "reviews": [
+        {
+          "rating": 4.8,
+          "comment": "Very warm and compact. Perfect for backpacking."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "LED Headlamp",
+      "description": "Bright, hands-free headlamp with adjustable settings for night adventures.",
+      "price": 18.75,
+      "image": "https://i.ibb.co.com/sLZQ4CD/headlamp.webp",
+      "category": "Lighting",
+      "additional_information": {
+        "battery_life": "10 hours",
+        "brightness": "300 lumens"
+      },
+      "shipping": {
+        "delivery_time": "3-4 business days",
+        "shipping_fee": "$3.00"
+      },
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Excellent light for night hikes. Very comfortable."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Multi-Tool Knife",
+      "description": "All-in-one stainless steel multi-tool for camping and emergencies.",
+      "price": 22.99,
+      "image": "https://i.ibb.co.com/zhtNqPLX/mult-Knife.webp",
+      "category": "Tools",
+      "additional_information": {
+        "material": "Stainless Steel",
+        "tools": "Knife, pliers, screwdriver, bottle opener"
+      },
+      "shipping": {
+        "delivery_time": "5-7 business days",
+        "shipping_fee": "$4.00"
+      },
+      "reviews": [
+        {
+          "rating": 4.2,
+          "comment": "Very sturdy and reliable tool. Has everything you need."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Tracking Jacket",
+      "description": "Lightweight and breathable jacket designed for tracking and outdoor adventures.",
+      "price": 85.00,
+      "image": "https://i.ibb.co.com/5gsBvMt3/jacket.webp",
+      "category": "Apparel",
+      "additional_information": {
+        "material": "Polyester",
+        "sizes": "S, M, L, XL",
+        "water_resistant": "Yes"
+      },
+      "shipping": {
+        "delivery_time": "3-5 business days",
+        "shipping_fee": "$5.00"
+      },
+      "reviews": [
+        {
+          "rating": 4.5,
+          "comment": "Great jacket for outdoor activities!"
+        }
+      ]
+    },
+ 
+    {
+      "id": 11,
+      "name": "Camping Stove",
+      "description": "Portable and efficient camping stove for cooking on outdoor trips.",
+      "price": 45.00,
+      "image": "https://i.ibb.co.com/KcnhzLPp/stove.webp",
+      "category": "Camping",
+      "additional_information": {
+        "material": "Aluminum",
+        "features": "Windproof, compact, easy to use"
+      },
+      "shipping": {
+        "delivery_time": "4-6 business days",
+        "shipping_fee": "$4.00"
+      },
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Compact and powerful. Great for camping meals."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Camp Cook Set",
+      "description": "Lightweight and durable cook set ideal for outdoor camping and hiking.",
+      "price": 55.00,
+      "image": "https://i.ibb.co.com/jPjn9ykV/camp-Cook-Set.webp",
+      "category": "Camping",
+      "additional_information": {
+        "material": "Stainless Steel",
+        "features": "Non-stick, nesting design, easy to clean"
+      },
+      "shipping": {
+        "delivery_time": "3-5 business days",
+        "shipping_fee": "$5.00"
+      },
+      "reviews": [
+        {
+          "rating": 4,
+          "comment": "Perfect for a weekend trip. All pieces fit together nicely."
+        }
+      ]
+    }
+    
+
+  ]
+  
