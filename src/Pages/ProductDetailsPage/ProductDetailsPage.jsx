@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom'
 import { useProducts } from '../../Hooks/useProducts'
 import { Title } from '../../Component/SectionTitle/Title'
 
+
+
 export const ProductDetailsPage = () => {
     const { products}=useProducts()
     const {id}=useParams()
@@ -10,7 +12,11 @@ export const ProductDetailsPage = () => {
     
 
     const product = products.find((prod) => prod.id == id);
-    console.log(product);
+    if (!product) {
+        return <div>Loading or product not found</div>;
+      }
+      
+  
     const {
         name,
         description,
@@ -30,15 +36,16 @@ export const ProductDetailsPage = () => {
     </Title>
 
     <section className='grid md:grid-cols-2 px-2'>
-        <div className='border'>
+        <div className='border bg-white'>
             <img src={image} alt="" />
+   
         </div>
         <div className=' flex flex-col 
         justify-center space-y-4 p-6'>
   <h1 className='text-3xl font-bold'>{name}</h1>
   <p className='text-gray-700'>{description}</p>
   <p className='text-lg font-semibold'>Price: ${price}</p>
-  <p className='text-sm text-gray-600'>Category: {category}</p>
+  <p className='text-sm text-gray-600 '>Category: {category}</p>
 
   <div>
     <h2 className='font-semibold'>Additional Information:</h2>

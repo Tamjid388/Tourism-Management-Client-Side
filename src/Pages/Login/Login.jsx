@@ -3,12 +3,14 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Authcontext } from '../../Provider/Authprovider';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
+import { useAxiosPublic } from '../../Hooks/useAxiosPublic';
 
 export const Login = () => {
-  const {user,signIn,forgetpass}=useContext(Authcontext)
+  const {user,signIn,forgetpass,loginWithGoogle}=useContext(Authcontext)
   const navigate=useNavigate()
   const location=useLocation()
   const emailRef=useRef()
+  const axiosPublic=useAxiosPublic()
   const from=location.state?.from?.pathname || "/"
   // razin@gmail.com pass1234
    const {
@@ -57,8 +59,23 @@ export const Login = () => {
             Swal.fire("Error", "Please enter your email first", "warning");
           }
         }
-        
-        
+        // Login With Google
+        const handleGoogleSignIne = () => {
+          loginWithGoogle().then((result) => {
+            console.log(result.user);
+            const userInfo = {
+              name: result.user?.displayName,
+              email: result.user?.email,
+              photo: result.user?.photoURL
+              
+            };
+            axiosPublic.post("/allusers", userInfo).then((res) => {
+              console.log(res.data);
+              console.log("signinWith google successfull");
+              navigate("/");
+            });
+          });
+        };  
 
 
 
@@ -102,6 +119,14 @@ export const Login = () => {
           <button onClick={handlePassReset} className='text-sm underline'>Forget Password</button>
 
           <div className="divider">OR</div>
+           {/*  SignUp With Google Button */}
+           <button
+            onClick={handleGoogleSignIne}
+            type="button"
+            className="btn btn-outline w-full mt-4"
+          >
+            SignUp With Google
+          </button>
 
        
 

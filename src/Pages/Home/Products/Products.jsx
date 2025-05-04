@@ -35,7 +35,7 @@ const topProducts=products.slice(0,4)
                       <img
                         src={product.image}
                         alt={product.name}
-                        className="rounded-xl h-[250px] object-contain object-center" />
+                        className="bg-white rounded-xl h-[250px] object-contain object-center" />
                     </figure>
                     <div className="card-body items-center text-center">
                     <p>{product.category}</p>
@@ -52,12 +52,12 @@ const topProducts=products.slice(0,4)
                   </div>)
             }
         </div>
-        <div className='flex justify-center mt-6 '>
+        {/* <div className='flex justify-center mt-6 '>
             <Link >
             <button className='btn rounded-none
              bg-green-100 btn-outline border-green-400'>Browse All Accessories</button>
             </Link>
-        </div>
+        </div> */}
     </div>
   )
 }

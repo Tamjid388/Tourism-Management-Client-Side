@@ -1,4 +1,4 @@
-import banner from "../../../assets/Banner/banner2.jpg"
+
 import banner2 from "../../../assets/Banner/scenario.webp"
 
 export const Banner = () => {
