@@ -65,6 +65,26 @@ This project utilizes the following key dependencies:
  ┗ 📂config  
 ```  
 
+
+
+## 🔗 Live Site  
+[Tourist Guide - Live Site](https://tourism-management-e5e73.web.app/)  
+
+---  
+
+## 💻 Admin Credentials  
+- **Username**: `admin2@gmail.com`  
+- **Password**: `Str0ngP@ssword1`  
+
+---
+---  
+
+## 👤 User Credentials  
+- **Username**: `	liam.anderson@gmail.com`  
+- **Password**: `Str0ngP@ssword1`  
+
+---
+
 ---  
 
 ## 🚀 How to Run the Project  
@@ -93,14 +113,3 @@ npm run dev
 Once the frontend is running, open [http://localhost:5173](http://localhost:5173) in your browser to access the site.  
 
 ---  
-
-## 🔗 Live Site  
-[Tourist Guide - Live Site](https://tourism-management-e5e73.web.app/)  
-
----  
-
-## 💻 Admin Credentials  
-- **Username**: `admin2@gmail.com`  
-- **Password**: `Str0ngP@ssword1`  
-
----
