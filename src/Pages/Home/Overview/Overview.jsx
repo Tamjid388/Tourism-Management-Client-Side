@@ -15,13 +15,13 @@ export const Overview = () => {
         <div className="px-3 py-4 md:space-y-12 md:w-1/2">
        <h1 className='text-2xl md:text-5xl font-bold mb-2 font-mansalva'> 
        Discover Unique Outdoor Adventures for Everyone</h1>
-<p className='font-lato text-base sm:text-lg md:text-3xl font-semibold'>  Explore nature in its purest form and ignite your passion for adventure. Whether it's hiking,
+<p className='font-lato text-base sm:text-lg  font-semibold'>  Explore nature in its purest form and ignite your passion for adventure. Whether it's hiking,
       kayaking, or camping, create memories that last a lifetime. Step away from the noise and
       reconnect with the outdoors.</p>
         </div>
      
      <div className="md:w-1/2 h-[400px]">
-     <iframe className='w-full h-full rounded-lg '
+     <iframe className='w-full h-full rounded-lg border  shadow-lg'
       width={'400px'}
         height="315"
         src="https://www.youtube.com/embed/Zcx247sfxPM?si=ieloQWAz_VVu1en1"

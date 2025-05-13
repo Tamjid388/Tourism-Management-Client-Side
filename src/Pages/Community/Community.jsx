@@ -27,7 +27,7 @@ export const Community = () => {
   }
   return (
     <div className="pt-16 container mx-auto">
-      Community {stories.length}
+     
       <Helmet>
         <title>Community | TripNest</title>
       </Helmet>

@@ -3,6 +3,7 @@ import React from 'react'
 import { useAxiosSecure } from '../../Hooks/useAxiosSecure';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import { Loading } from '../../Component/LoadingSpinner/Loading';
 
 export const Alltrips = () => {
     const axiosSecure=useAxiosSecure()
@@ -16,11 +17,12 @@ export const Alltrips = () => {
         
       })
       if(isPending){
-        return <h1>Loading.....</h1>
+        return  <Loading/>
       }
   return (
     <div className='py-16'>
         <Helmet>
+         
              <title>All Trips | TripNest</title>
              </Helmet>
         <h1 className='text-4xl font-bold  py-8 text-center'>All Trips</h1>

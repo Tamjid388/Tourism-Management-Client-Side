@@ -87,14 +87,13 @@ export const TouristStory = () => {
 
         </section>
 
-        <div>
-          <div className='flex justify-center'>
-          <Link to={'allstoryhome'}>
-          <button className='btn btn-link text-xl'>All Stories</button>
-          </Link>
-
-          </div>
-        </div>
+      
+             <div className='flex justify-center mt-6 '>
+                    <Link to={'allstoryhome'}>
+                    <button className='btn rounded-none
+                     bg-green-100 btn-outline border-green-400'>Browse All Stories</button>
+                    </Link>
+                </div>
     </div>
   )
 }

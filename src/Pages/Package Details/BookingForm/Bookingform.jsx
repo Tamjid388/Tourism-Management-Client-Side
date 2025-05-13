@@ -123,7 +123,7 @@ export const Bookingform = () => {
         </div>
       )}
         <h1 className='text-4xl font-bold text-center my-12'>Booking Form</h1>
-        <div className='max-w-lg mx-auto border p-8 bg-base-200 rounded-lg'>
+        <div className='max-w-6xl mx-auto border p-8 bg-base-200 rounded-lg '>
             <form action="" className='space-y-4'
             onSubmit={handleSubmit(onSubmit)}
             >

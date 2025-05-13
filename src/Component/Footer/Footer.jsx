@@ -1,5 +1,6 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import logo from "../../assets/Link.png"
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return (
@@ -16,12 +17,28 @@ export const Footer = () => {
     &copy; {new Date().getFullYear()} Tripnest. All rights reserved.
      
     </p>
+  <p className="font-semibold">
+        Developed by{' '}
+  <a
+    href="https://tamjidahmedportfolio.netlify.app/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-green-600 hover:underline"
+  >
+    Tamjid Ahmed
+  </a>
+  </p>
   </aside>
   <nav>
     <h6 className="footer-title">Legal</h6>
+   <Link to={"/termsAndCondition"}>
     <a className="link link-hover">Terms of use</a>
-    <a className="link link-hover">Privacy policy</a>
-    <a className="link link-hover">Cookie policy</a>
+   </Link>
+   <Link to={'/PrivacyPolicy'}>
+     <a className="link link-hover">Privacy policy</a>
+   </Link>
+  
+    
   </nav>
   <nav>
     <h6 className="footer-title">Social</h6>

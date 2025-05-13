@@ -3,7 +3,7 @@ import { Title } from '../../../Component/SectionTitle/Title'
 
 export const TourPlan = () => {
   return (
-    <div className='container mx-auto'>
+    <div className='container mx-auto my-16 px-2'>
         <Title heading={'Tour Plan'}>
 
         </Title>

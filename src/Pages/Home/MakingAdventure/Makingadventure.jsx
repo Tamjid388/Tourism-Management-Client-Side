@@ -1,11 +1,12 @@
 import React from "react";
 
 export const Makingadventure = () => {
-  const img1 = "https://i.ibb.co.com/7NxpsLG0/makeadventure.jpg";
+  const img = "https://i.ibb.co.com/7NxpsLG0/makeadventure.jpg";
+  const img1 = "https://res.cloudinary.com/dto6ulc5n/image/upload/w_auto,q_auto/t_800_800/v1746707334/jwhtbtcfnt1zwkqelfks.jpg";
   return (
-    <div className="mx-auto container my-16 flex 
+    <div className="mx-auto container my-16 flex  bg-base-200
     flex-col-reverse md:flex-row  px-2 ">
-      <div className="md:w-1/2 bg-base-200 flex flex-col p-4
+      <div className="md:w-1/2  flex flex-col p-4
        justify-center md:px-20 space-y-4 md:space-y-12">
         <h1 className="text-3xl font-semibold font-serif mt-4 ">
           Making Adventure tours, activities <br />
@@ -18,8 +19,8 @@ export const Makingadventure = () => {
         </p>
       </div>
 
-      <div className="md:w-1/2  ">
-        <img className="rounded-lg p-4" src={img1} alt="" />
+      <div className="md:w-1/2 ">
+        <img className="rounded-lg object-contain p-4 w-full h-full" src={img1} alt="" />
       </div>
     </div>
   );

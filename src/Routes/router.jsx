@@ -32,6 +32,9 @@ import { AllStory } from "../Pages/Home/TouristStory/AllStory";
 import { Alltrips } from "../Pages/AllTrips/Alltrips";
 import { Aboutuse } from "../Pages/AboutUs/Aboutuse";
 import { ProductDetailsPage } from "../Pages/ProductDetailsPage/ProductDetailsPage";
+import { ALLProduct } from "../Pages/AllProduct/ALLProduct";
+import { TermsAndCondition } from "../Pages/TermsAndCondtion/TermsAndCondition";
+import { PrivacyPolicy } from "../Pages/PrivacyPolicy/PrivacyPolicy";
 
 
 
@@ -64,6 +67,10 @@ const router = createBrowserRouter([
           element:<ProductDetailsPage></ProductDetailsPage>
         },
         {
+          path:'/products/AllProduct',
+          element:<ALLProduct></ALLProduct>
+        },
+        {
           path:'/alltrips',
           element:<Alltrips></Alltrips>
         },
@@ -87,6 +94,14 @@ const router = createBrowserRouter([
         {
           path:'allstoryhome',
           element:<AllStory></AllStory>
+        },
+        {
+          path:'/termsAndCondition',
+          element:<TermsAndCondition></TermsAndCondition>
+        },
+        {
+          path:'/PrivacyPolicy',
+          element:<PrivacyPolicy></PrivacyPolicy>
         }
       ]
     },

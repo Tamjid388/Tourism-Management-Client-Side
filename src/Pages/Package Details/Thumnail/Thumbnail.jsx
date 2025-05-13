@@ -6,26 +6,21 @@ import 'lightgallery/css/lg-zoom.css';
 import 'lightgallery/css/lg-thumbnail.css';
 
 // importing images
-import th2 from "../../../assets/Thumbnail/th2.webp"
-import th3 from "../../../assets/Thumbnail/th3.webp"
-import th4 from "../../../assets/Thumbnail/th4.webp"
-import th5 from "../../../assets/Thumbnail/th5.webp"
-import th6 from "../../../assets/Thumbnail/th6.webp"
-import th7 from "../../../assets/Thumbnail/th7.webp"
-import th8 from "../../../assets/Thumbnail/th8.webp"
-import th9 from "../../../assets/Thumbnail/th9.webp"
+
 
 const images = [
-    { src: th2, alt: 'Image 2' },
-    { src: th3, alt: 'Image 3' },
-    { src: th4, alt: 'Image 4' },
-    { src: th5, alt: 'Image 5' },
-    { src: th6, alt: 'Image 6' },
-    { src: th7, alt: 'Image 7' },
-    { src: th8, alt: 'Image 8' },
-    { src: th9, alt: 'Image 9' },
-    { src: th6, alt: 'Image 6' },
-    { src: img1, alt: 'Image 4' },
+    { src: "https://res.cloudinary.com/dto6ulc5n/image/upload/v1746707042/bandarban2_p1x9bv.webp", 
+      alt: 'Image 2' },
+    { src: "https://res.cloudinary.com/dto6ulc5n/image/upload/t_800_800/v1742756915/samples/landscapes/nature-mountains.jpg", alt: 'Image 3' },
+    { src: "https://res.cloudinary.com/dto6ulc5n/image/upload/t_800_800/v1742756915/samples/landscapes/beach-boat.jpg",
+       alt: 'Image 4' },
+    { src: "https://res.cloudinary.com/dto6ulc5n/image/upload/t_800_800/v1742756914/samples/landscapes/girl-urban-view.jpg", alt: 'Image 5' },
+    { src: "https://res.cloudinary.com/dto6ulc5n/image/upload/v1746707334/jwhtbtcfnt1zwkqelfks.jpg", alt: 'Image 6' },
+    { src: "https://res.cloudinary.com/dto6ulc5n/image/upload/t_800_800/v1746707029/bandarban1_gpjn8c.webp", alt: 'Image 7' },
+    { src: "https://res.cloudinary.com/dto6ulc5n/image/upload/t_800_800/v1746705947/cox_ay1pgg.jpg", alt: 'Image 8' },
+    { src: "https://res.cloudinary.com/dto6ulc5n/image/upload/t_800_800/v1746706456/sundarban_knmjo8.webp", alt: 'Image 9' },
+    { src: "https://res.cloudinary.com/dto6ulc5n/image/upload/t_800_800/v1746706443/srimangal_dncjsm.webp", alt: 'Image 6' },
+    { src: "https://res.cloudinary.com/dto6ulc5n/image/upload/v1746707334/jwhtbtcfnt1zwkqelfks.jpg", alt: 'Image 4' },
   ];
 
 // import plugins if you need

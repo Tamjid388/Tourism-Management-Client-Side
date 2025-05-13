@@ -1,13 +1,15 @@
 import { useQuery } from '@tanstack/react-query'
-import axios from 'axios'
 import React from 'react'
-import { Title } from '../../../Component/SectionTitle/Title'
+import { Loading } from '../../Component/LoadingSpinner/Loading'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
-export const Products = () => {
-    const {isLoading, isError, data:products=[], error}=useQuery(
+export const ALLProduct = () => {
+const banner="https://res.cloudinary.com/dto6ulc5n/image/upload/v1747157820/shop_l9ahcw.webp"
+  
+   const {isLoading, isError, data:products=[], error}=useQuery(
         {
-            queryKey:["AdventureProducts"],
+            queryKey:["AllProducts"],
             queryFn:async()=>{
                 const response=await axios.get('/products.json')
                
@@ -15,20 +17,22 @@ export const Products = () => {
             }
         }
     )
-const topProducts=products.slice(0,4)
-
-
-  return (
-    <div className='container mx-auto px-2  my-16'>
- <Title 
-        heading="Explore Essential Gear"
-        subheading="Shop Top-rated products for your next adventure"
-        
-        ></Title>
-
-        <div className='grid grid-cols-1  md:grid-cols-4 gap-8'>
+    if(isLoading){
+        return <Loading></Loading>
+    }
+    console.log(products);
+return (
+    <div
+    className='container mx-auto py-16'
+    >
+<div>
+    <figure>
+        <img src={banner} alt="" />
+    </figure>
+    
+        <div className='grid grid-cols-1  md:grid-cols-4 gap-8 my-16'>
             {
-                topProducts.map((product)=>
+                products.map((product)=>
                 <div key={product.id}
                  className="card bg-base-100  shadow-xl border">
                     <figure className=" ">
@@ -52,12 +56,7 @@ const topProducts=products.slice(0,4)
                   </div>)
             }
         </div>
-        <div className='flex justify-center mt-6 '>
-            <Link to={'/products/AllProduct'}>
-            <button className='btn rounded-none
-             bg-green-100 btn-outline border-green-400'>Browse All Accessories</button>
-            </Link>
-        </div>
+</div>
     </div>
   )
 }

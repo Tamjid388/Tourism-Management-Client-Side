@@ -23,10 +23,11 @@ export const PackageDetails = () => {
       ></Title>
         <Thumbnail></Thumbnail>
         <AboutTour></AboutTour>
-        <TourPlan></TourPlan>
+       
         <Guides></Guides>
       
         <Bookingform></Bookingform>
+         <TourPlan></TourPlan>
         
     </div>
   )

@@ -31,7 +31,7 @@ export const Explore = () => {
             {
                 resources.map(resouce=><div key={resouce._id} className="card bg-base-100   shadow-xl ">
                     <figure className='rounded border-2'>
-                      <img className='h-[300px] w-full'
+                      <img className='h-[300px] w-full object-cover'
                         src={resouce.image_url}
                         alt="Shoes" />
                     </figure>
